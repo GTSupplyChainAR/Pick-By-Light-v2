@@ -17,6 +17,7 @@ pickpath = {}
 i,j,k = 0,0,0
 
 carts = ["C11", "C12", "C13"]
+rack_names = ["A", "B"]
 
 rightdisplay={'0':63,'1':6,'2':91,'3':79,'4':102,'5':109,'6':125,'7':7,'8':127,'9':111}
 leftdisplay={'0':16128,'1':1536,'2':23296,'3':20224,'4':26112,'5':27904,'6':32000,'7':1792,'8':32512,'9':28416}
@@ -125,7 +126,8 @@ def parseExperimentDictionary(experimentData):
         taskId = tasks[i]['taskId']
         isTrainingTask = tasks[i]['isTrainingTask']
         i += 1
-
+        
+        pick_paths = []
         while j < len(orders):
             sourceBins = orders[j]['sourceBins']
 
@@ -134,15 +136,18 @@ def parseExperimentDictionary(experimentData):
             j += 1
 
             k = 0
-            pickpath = {}
+            
+            for rack_name in rack_names:
+                for cart in carts:
+                    
+                    pickpath = {}
+                    for source_bin in sourceBins:
+                        if source_bin['binTag'][0] == rack_name and receiveBins == cart:
+                            pickpath[source_bin['binTag']] = source_bin['num_items']
 
-            while k < len(sourceBins):
-                binTag = sourceBins[k]['binTag']
-                numItems = sourceBins[k]['numItems']
-
-                pickpath[binTag] = numItems
-                k += 1
-
+                    pick_paths.append(pickpath)
+                    
+        for pickpath in pick_paths:
             runPickPath(pickpath)
 
 
