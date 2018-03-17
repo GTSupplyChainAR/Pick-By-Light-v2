@@ -1,8 +1,9 @@
 """fml.py
 
 This modules works as part of the Pick By Light system at the Georgia Tech
-Contextual Computing Group's dense pick setup located in TSRB Lab 243. 
-    $ python fml.py [*args]
+Contextual Computing Group's dense pick setup located in TSRB Lab 243. Run with 
+a json file, usually called pick_tasks.json
+    $ python fml.py pick_tasks.json
 
 Todo:
     * Fix docstrings (esp ChangeDisplay)
@@ -10,14 +11,20 @@ Todo:
 """
 import json
 import re
+import copy
 from time import sleep, time
 from socket import *
 
 pickpath = {}
-i,j,k = 0,0,0
+taskIndex, orderIndex = 0,0
 
 carts = ["C11", "C12", "C13"]
-rack_names = ["A", "B"]
+racks = ["A", "B"]
+
+# Pickpath to test displays
+pp = {"A11": 88, "A12": 88, "A13": 88, "A21": 88, "A22": 88, "A23": 88, "A31": 88, "A32": 88, "A33": 88, "A41": 88, 
+"A42": 88, "A43": 88, "B11": 88, "B12": 88, "B13": 88, "B21": 88, "B22": 88, "B23": 88, "B31": 88, "B32": 88, 
+"B33": 88, "B41": 88, "B42": 88, "B43": 88}
 
 rightdisplay={'0':63,'1':6,'2':91,'3':79,'4':102,'5':109,'6':125,'7':7,'8':127,'9':111}
 leftdisplay={'0':16128,'1':1536,'2':23296,'3':20224,'4':26112,'5':27904,'6':32000,'7':1792,'8':32512,'9':28416}
@@ -41,14 +48,13 @@ def readJsonFile(filename):
     fileh.close()
     return data
 
-def ChangeDisplay(sockcntrl,display,number,setup):
-    """Function that changes the display
+def ChangeDisplay(sockcntrl,display,number, setup=False):
+    """Function that changes a particular display to show a number.
 
     Args:
         sockcntrl (obj): socket connection
         display (str): id of display
         number (int): number to show on display
-        setup (boolean): ???
     """
     message1='xpl-cmnd\n{\nhop=1\nsource=bnz-sender.orderpick\ntarget=smgpoe-lamp.'
     message2='\n}\ncontrol.basic\n{\ndevice=display\ntype=variable\ncurrent='
@@ -58,7 +64,7 @@ def ChangeDisplay(sockcntrl,display,number,setup):
     return sockcntrl.sendto(message,('192.168.2.255',3865))
 
 def NumberConvert(number, setup=True):
-    """Function that converts input to representation for display
+    """Function that converts input to representation for display.
 
     Args:
         number (int): number before conversion
@@ -92,7 +98,7 @@ def initReceive(receiveDisplay):
     ChangeDisplay(sockhub, receiveDisplay, 47375, False)
 
 def press():
-    """Function which checks if button is pushed and returns button
+    """Function which checks if button is pushed and returns button.
 
     Returns:
         display (str): id of display corresponding to button pressed
@@ -105,7 +111,7 @@ def press():
             return display
 
 def displayCountReceive(receiveDisplay, previousTotal):
-    """Function which decrements count left to pick on receive bin
+    """Function which decrements count left to pick on receive bin.
 
     Args:
         receiveDisplay (str): id of display corresponding to receive bin
@@ -114,85 +120,150 @@ def displayCountReceive(receiveDisplay, previousTotal):
     pass
 
 def parseExperimentDictionary(experimentData):
-    """Function which parses dictionary with experiment data from json file
+    """Function which parses dictionary with experiment data from json file.
 
     Args:
         experimentData (dict): dictionary of structured experiment data 
     """
     tasks = experimentData['tasks']
-    global i, j, k
-    while i < len(tasks):  
-        orders = tasks[i]['orders']
-        taskId = tasks[i]['taskId']
-        isTrainingTask = tasks[i]['isTrainingTask']
-        i += 1
+    global taskIndex, orderIndex
+    tasksReturn = []
+    while taskIndex < len(tasks):  
+        orders = tasks[taskIndex]['orders']
+        taskId = tasks[taskIndex]['taskId']
+        isTrainingTask = tasks[taskIndex]['isTrainingTask']
         
+        taskIndex += 1
+        orderIndex = 0
+
         pick_paths = []
-        while j < len(orders):
-            sourceBins = orders[j]['sourceBins']
+        while orderIndex < len(orders):
+            sourceBins = orders[orderIndex]['sourceBins']
 
-            orderId = orders[j]['orderId']
-            receiveBins = orders[j]['receivingBinTag']
-            j += 1
-
-            k = 0
+            orderId = orders[orderIndex]['orderId']
+            receiveBin = orders[orderIndex]['receivingBinTag']
             
-            for rack_name in rack_names:
-                for cart in carts:
+            orderIndex += 1
+            
+            rack_orders = {} 
+            for rack in racks: 
+                pickpath = {}
                     
-                    pickpath = {}
-                    for source_bin in sourceBins:
-                        if source_bin['binTag'][0] == rack_name and receiveBins == cart:
-                            pickpath[source_bin['binTag']] = source_bin['num_items']
+                cartTotal = 0
+                for source_bin in sourceBins:
+                    if source_bin['binTag'][0] == rack:
+                        pickpath[source_bin['binTag']] = source_bin['numItems']
+                        cartTotal += source_bin['numItems']
 
-                    pick_paths.append(pickpath)
-                    
-        for pickpath in pick_paths:
-            runPickPath(pickpath)
+                if pickpath != {}:
+                    pickpath[receiveBin] = cartTotal
+                    cloned_pick_path = copy.deepcopy(pickpath)
+                    rack_orders[rack] = cloned_pick_path
 
+            cloned_racks = copy.deepcopy(rack_orders)
+            pick_paths.append(cloned_racks)
+
+        ordered_pick_paths = changePickPathOrder(pick_paths)
+        cloned_pick_paths = copy.deepcopy(ordered_pick_paths)
+        tasksReturn.append(cloned_pick_paths)
+    return tasksReturn
+
+def changePickPathOrder(pick_paths):
+    """From originally parsed pickpaths from json file, change order to put all orders together
+    based on what rack they're from. Return an ordered list.
+    """
+    ordered_pick_paths = []
+    for rack in racks:
+        for pp in pick_paths:
+            if rack in pp.keys():
+                ordered_pick_paths.append(pp[rack])
+
+    return ordered_pick_paths
+
+def initDisplays(pickpath):
+    """Function which starts the order on the displays.
+
+    Args:
+        pickpath (dict): keys are displays and values are quantities
+    """
+    reset()
+    for display, quantity in pickpath.items():
+        ChangeDisplay(sockhub, display, NumberConvert(quantity), False)
+        sleep(0.15)
 
 def runExperiment():
     """
     """
     pass
 
-def runTask(cartSet):
-    """Function that runs a full task with a set of carts
+def runTask(pickpaths, cartSet):
+    """Function that runs a full task with a set of carts and a list of pickpaths.
 
     Args:
         cartSet (list): list of carts in a task, ordered
     """
-    for cart in cartSet:
-        initReceive(cart)
-        
-        while True: #always checking for signals
-            if press() == cart:
-                taskStartTime = time.time()
+    taskInProgress = True
+    reset()
+    initReceive('C11')
+    print("OAXAKAC")
+    while taskInProgress:
+        cart = press()
+        if cart in cartSet:
+            #taskStartTime = time.time()
+            ChangeDisplay(sockhub, cart, 5, False) #change to TOTAL!
+            #print(pickpaths)
+            for pickpath in pickpaths:
+                #print(pickpath)
                 runPickPath(pickpath)
-                ChangeDisplay(sockhub, cart, NumberConvert(5), False) #change to TOTAL!
+                taskInProgress = False
 
 def runPickPath(pickpath):
-    """Function that runs a full pick path
+    """Function that runs a full pick path.
 
     Args:
         pickpath (dict): keys are displays and values are quantities
     """
-    reset()
+    initDisplays(pickpath)
 
-    for k, v in pickpath.items():
-        ChangeDisplay(sockhub, k, NumberConvert(v), False)
-        sleep(0.15)
+    pressed = []
+    pickpathInProgress = True
+    total = pickpath[list(pickpath.keys())[-1]]
+    while pickpathInProgress:
 
-    while True:
         display = press()
-        if display in pickpath.keys():
+        if display != None:
+            pressed.append(display)
+
+        correctPressed = set(filter(lambda x: x in pickpath.keys(), pressed))
+        displaySet = set(list(pickpath.keys())[:-1])
+        receiveBin = list(pickpath.keys())[-1]
+        if (displaySet <= correctPressed) and (displaySet >= correctPressed):
             ChangeDisplay(sockhub, display, 63, False)
+            ChangeDisplay(sockhub, receiveBin, 63, False)
+            sleep(1)
+            pickpathInProgress = False
+        elif display in pickpath.keys():
+            ChangeDisplay(sockhub, display, 63, False)
+            total = total - pickpath[display]
+            ChangeDisplay(sockhub, receiveBin, NumberConvert(total), False)
 
 
 def main(args): 
     data = readJsonFile(args)
-    parseExperimentDictionary(data)
+
+    pickpaths = parseExperimentDictionary(data)
+
+    for picktask in pickpaths:
+        print("\n\nTASK START")
+        for pickorder in picktask:
+            runPickPath(pickorder)
 
 if __name__ == "__main__":
     import sys
-    main(sys.argv[1])
+    try:
+        main(sys.argv[1])
+    except Exception as exception:
+        print("Experiment Failed.")
+        print(exception)
+    except:
+        print("\nExperiment Complete.")
