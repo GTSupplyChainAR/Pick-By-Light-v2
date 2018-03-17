@@ -186,7 +186,6 @@ def initDisplays(pickpath):
     Args:
         pickpath (dict): keys are displays and values are quantities
     """
-    reset()
     for display, quantity in pickpath.items():
         ChangeDisplay(sockhub, display, NumberConvert(quantity), False)
         sleep(0.15)
@@ -194,28 +193,26 @@ def initDisplays(pickpath):
 def runExperiment():
     """
     """
-    pass
+    
 
-def runTask(pickpaths, cartSet):
+def runTask(pickpaths):
     """Function that runs a full task with a set of carts and a list of pickpaths.
 
     Args:
         cartSet (list): list of carts in a task, ordered
     """
-    taskInProgress = True
-    reset()
-    initReceive('C11')
-    print("OAXAKAC")
-    while taskInProgress:
-        cart = press()
-        if cart in cartSet:
-            #taskStartTime = time.time()
-            ChangeDisplay(sockhub, cart, 5, False) #change to TOTAL!
-            #print(pickpaths)
-            for pickpath in pickpaths:
-                #print(pickpath)
-                runPickPath(pickpath)
-                taskInProgress = False
+    for picktask in pickpaths:
+        print("\n\nTASK START")
+        
+        for pickorder in picktask:
+            initReceive(list(pickorder)[-1])
+            orderInProgress = False
+            
+            while not orderInProgress:
+                if press() == list(pickorder)[-1]:
+                    runPickPath(pickorder)
+                    reset()
+                    orderInProgress = True
 
 def runPickPath(pickpath):
     """Function that runs a full pick path.
@@ -237,26 +234,23 @@ def runPickPath(pickpath):
         correctPressed = set(filter(lambda x: x in pickpath.keys(), pressed))
         displaySet = set(list(pickpath.keys())[:-1])
         receiveBin = list(pickpath.keys())[-1]
-        if (displaySet <= correctPressed) and (displaySet >= correctPressed):
+
+        if (displaySet <= correctPressed):
             ChangeDisplay(sockhub, display, 63, False)
             ChangeDisplay(sockhub, receiveBin, 63, False)
-            sleep(1)
+            sleep(1.5)
             pickpathInProgress = False
-        elif display in pickpath.keys():
+        elif display in list(pickpath.keys())[:-1]:
             ChangeDisplay(sockhub, display, 63, False)
             total = total - pickpath[display]
             ChangeDisplay(sockhub, receiveBin, NumberConvert(total), False)
 
 
 def main(args): 
+    reset()
     data = readJsonFile(args)
-
     pickpaths = parseExperimentDictionary(data)
-
-    for picktask in pickpaths:
-        print("\n\nTASK START")
-        for pickorder in picktask:
-            runPickPath(pickorder)
+    runTask(pickpaths)
 
 if __name__ == "__main__":
     import sys
