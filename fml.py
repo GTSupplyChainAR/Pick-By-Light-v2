@@ -6,6 +6,7 @@ a json file, usually called pick_tasks.json
     $ python fml.py pick_tasks.json
 
 Todo:
+    * Change Sleep to Button confirm
     * Fix docstrings (esp ChangeDisplay)
     * Change recvfrom to recv in receivePackets func
 """
