@@ -239,7 +239,13 @@ def runPickPath(pickpath):
         if (displaySet <= correctPressed):
             ChangeDisplay(sockhub, display, 63, False)
             ChangeDisplay(sockhub, receiveBin, 63, False)
-            sleep(1.5)
+            subtaskInProgress = True
+
+            while subtaskInProgress:
+                if press() == receiveBin:
+                    ChangeDisplay(sockhub, receiveBin, 0, False)
+                    subtaskInProgress = False
+
             pickpathInProgress = False
         elif display in list(pickpath.keys())[:-1]:
             ChangeDisplay(sockhub, display, 63, False)
