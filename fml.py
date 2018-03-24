@@ -6,7 +6,8 @@ a json file, usually called pick_tasks.json
     $ python fml.py pick_tasks.json
 
 Todo:
-    * Change Sleep to Button confirm
+    * Write log file according to Theo's example
+    * Do time stamps
     * Fix docstrings (esp ChangeDisplay)
     * Change recvfrom to recv in receivePackets func
 """
@@ -132,7 +133,6 @@ def parseExperimentDictionary(experimentData):
     while taskIndex < len(tasks):  
         orders = tasks[taskIndex]['orders']
         taskId = tasks[taskIndex]['taskId']
-        isTrainingTask = tasks[taskIndex]['isTrainingTask']
         
         taskIndex += 1
         orderIndex = 0
@@ -227,7 +227,6 @@ def runPickPath(pickpath):
     pickpathInProgress = True
     total = pickpath[list(pickpath.keys())[-1]]
     while pickpathInProgress:
-
         display = press()
         if display != None:
             pressed.append(display)
@@ -247,6 +246,7 @@ def runPickPath(pickpath):
                     subtaskInProgress = False
 
             pickpathInProgress = False
+
         elif display in list(pickpath.keys())[:-1]:
             ChangeDisplay(sockhub, display, 63, False)
             total = total - pickpath[display]
