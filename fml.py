@@ -11,11 +11,22 @@ Todo:
     * Fix docstrings (esp ChangeDisplay)
     * Change recvfrom to recv in receivePackets func
 """
+import os
 import json
 import re
 import copy
 from time import sleep, time
 from socket import *
+import logging
+from models import SourceBin, RackOrders, ReceiveBin
+
+logger = logging.getLogger(os.path.basename(__file__))
+logger.setLevel(logging.DEBUG)
+_hdlr = logging.StreamHandler()
+_formatter = logging.Formatter('%(asctime)-20s : %(name)-14s : %(levelname)-8s : %(message)s')
+_hdlr.setFormatter(_formatter)
+_hdlr.setLevel(logging.DEBUG)
+logger.addHandler(_hdlr)
 
 pickpath = {}
 taskIndex, orderIndex = 0,0
@@ -24,8 +35,8 @@ carts = ["C11", "C12", "C13"]
 racks = ["A", "B"]
 
 # Pickpath to test displays
-pp = {"A11": 88, "A12": 88, "A13": 88, "A21": 88, "A22": 88, "A23": 88, "A31": 88, "A32": 88, "A33": 88, "A41": 88, 
-"A42": 88, "A43": 88, "B11": 88, "B12": 88, "B13": 88, "B21": 88, "B22": 88, "B23": 88, "B31": 88, "B32": 88, 
+pp = {"A11": 88, "A12": 88, "A13": 88, "A21": 88, "A22": 88, "A23": 88, "A31": 88, "A32": 88, "A33": 88, "A41": 88,
+"A42": 88, "A43": 88, "B11": 88, "B12": 88, "B13": 88, "B21": 88, "B22": 88, "B23": 88, "B31": 88, "B32": 88,
 "B33": 88, "B41": 88, "B42": 88, "B43": 88}
 
 rightdisplay={'0':63,'1':6,'2':91,'3':79,'4':102,'5':109,'6':125,'7':7,'8':127,'9':111}
@@ -130,43 +141,49 @@ def parseExperimentDictionary(experimentData):
     tasks = experimentData['tasks']
     global taskIndex, orderIndex
     tasksReturn = []
-    while taskIndex < len(tasks):  
+    while taskIndex < len(tasks):
         orders = tasks[taskIndex]['orders']
         taskId = tasks[taskIndex]['taskId']
-        
-        taskIndex += 1
+
         orderIndex = 0
 
-        pick_paths = []
+        tasks_in_order = []
         while orderIndex < len(orders):
-            sourceBins = orders[orderIndex]['sourceBins']
 
             orderId = orders[orderIndex]['orderId']
             receiveBin = orders[orderIndex]['receivingBinTag']
-            
-            orderIndex += 1
-            
-            rack_orders = {} 
-            for rack in racks: 
-                pickpath = {}
-                    
+
+            for rack in racks:
+                source_bins = []
+
                 cartTotal = 0
-                for source_bin in sourceBins:
+                for source_bin in orders[orderIndex]['sourceBins']:
                     if source_bin['binTag'][0] == rack:
-                        pickpath[source_bin['binTag']] = source_bin['numItems']
-                        cartTotal += source_bin['numItems']
+                        numItems = source_bin['numItems']
+                        source_bins.append(SourceBin(
+                            tag=source_bin['binTag'],
+                            count=numItems
+                        ))
+                        cartTotal += numItems
 
-                if pickpath != {}:
-                    pickpath[receiveBin] = cartTotal
-                    cloned_pick_path = copy.deepcopy(pickpath)
-                    rack_orders[rack] = cloned_pick_path
+                tasks_in_order.append(RackOrders(
+                    task_id=taskId,
+                    order_id=orderId,
+                    rack=rack,
+                    source_bins=source_bins,
+                    receive_bin=ReceiveBin(
+                        tag=receiveBin,
+                        expected_count=cartTotal,
+                    )
+                ))
 
-            cloned_racks = copy.deepcopy(rack_orders)
-            pick_paths.append(cloned_racks)
+            orderIndex += 1
 
-        ordered_pick_paths = changePickPathOrder(pick_paths)
-        cloned_pick_paths = copy.deepcopy(ordered_pick_paths)
-        tasksReturn.append(cloned_pick_paths)
+        tasks_ordered_by_rack = sorted(tasks_in_order, key=lambda rack_orders: rack_orders.rack)
+
+        tasksReturn.extend(tasks_ordered_by_rack)
+
+        taskIndex += 1
     return tasksReturn
 
 def changePickPathOrder(pick_paths):
@@ -194,7 +211,7 @@ def initDisplays(pickpath):
 def runExperiment():
     """
     """
-    
+
 
 def runTask(pickpaths):
     """Function that runs a full task with a set of carts and a list of pickpaths.
@@ -202,39 +219,42 @@ def runTask(pickpaths):
     Args:
         cartSet (list): list of carts in a task, ordered
     """
-    for picktask in pickpaths:
-        print("\n\nTASK START")
-        
-        for pickorder in picktask:
-            initReceive(list(pickorder)[-1])
-            orderInProgress = False
-            
-            while not orderInProgress:
-                if press() == list(pickorder)[-1]:
-                    runPickPath(pickorder)
-                    reset()
-                    orderInProgress = True
+    for pickorder in pickpaths:  # type: RackOrders
+        logger.info("TASK START: %s" % pickorder)
 
-def runPickPath(pickpath):
+        initReceive(pickorder.receive_bin.tag)
+        orderInProgress = False
+
+        while not orderInProgress:
+            if press() == pickorder.receive_bin.tag:
+                runPickPath(pickorder)
+                reset()
+                orderInProgress = True
+
+def runPickPath(pickpath):  # type: (RackOrders) -> None
     """Function that runs a full pick path.
 
     Args:
         pickpath (dict): keys are displays and values are quantities
     """
-    initDisplays(pickpath)
+    initDisplays(pickpath.for_init_displays)
 
     pressed = []
     pickpathInProgress = True
-    total = pickpath[list(pickpath.keys())[-1]]
+    total = pickpath.receive_bin.expected_count
     while pickpathInProgress:
         display = press()
-        if display != None:
-            pressed.append(display)
+        if display is None:
+            continue
 
-        correctPressed = set(filter(lambda x: x in pickpath.keys(), pressed))
-        displaySet = set(list(pickpath.keys())[:-1])
-        receiveBin = list(pickpath.keys())[-1]
+        logger.debug("Subject pressed %s." % display)
+        pressed.append(display)
 
+        correctPressed = set(filter(lambda x: x in pickpath.for_init_displays.keys(), pressed))
+        displaySet = set(pickpath.source_bins_in_dict.keys())
+        receiveBin = pickpath.receive_bin.tag
+
+        # If the subject pressed all of the required source bins' buttons...
         if (displaySet <= correctPressed):
             ChangeDisplay(sockhub, display, 63, False)
             ChangeDisplay(sockhub, receiveBin, 63, False)
@@ -247,13 +267,20 @@ def runPickPath(pickpath):
 
             pickpathInProgress = False
 
-        elif display in list(pickpath.keys())[:-1]:
+        # Else if the subject pressed a source bin
+        elif display in displaySet:
             ChangeDisplay(sockhub, display, 63, False)
-            total = total - pickpath[display]
+            pressed_source_bin_count = pickpath.source_bins_in_dict[display]  # type: int
+            total = total - pressed_source_bin_count
+            if total < 0:
+                logger.warning("Display somehow %s jumped into negative numbers! (%d)" % (display, total))
+                total = 0
             ChangeDisplay(sockhub, receiveBin, NumberConvert(total), False)
+        else:
+            logger.warning("Unexpected state!")
 
 
-def main(args): 
+def main(args):
     reset()
     data = readJsonFile(args)
     pickpaths = parseExperimentDictionary(data)
@@ -266,5 +293,6 @@ if __name__ == "__main__":
     except Exception as exception:
         print("Experiment Failed.")
         print(exception)
+        raise
     except:
         print("\nExperiment Complete.")
