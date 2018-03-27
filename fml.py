@@ -11,22 +11,22 @@ Todo:
     * Fix docstrings (esp ChangeDisplay)
     * Change recvfrom to recv in receivePackets func
 """
-import os
 import json
 import re
 import copy
 from time import sleep, time
 from socket import *
 import logging
-from models import SourceBin, RackOrders, ReceiveBin
+from models import SourceBin, PickingTask, ReceiveBin
 
+# Setup logging
 logger = logging.getLogger(os.path.basename(__file__))
 logger.setLevel(logging.DEBUG)
-_hdlr = logging.StreamHandler()
-_formatter = logging.Formatter('%(asctime)-20s : %(name)-14s : %(levelname)-8s : %(message)s')
-_hdlr.setFormatter(_formatter)
-_hdlr.setLevel(logging.DEBUG)
-logger.addHandler(_hdlr)
+loggerHandler = logging.StreamHandler()
+loggerFormatter = logging.Formatter('%(asctime)-20s : %(name)-14s : %(levelname)-8s : %(message)s')
+loggerHandler.setFormatter(loggerFormatter)
+loggerHandler.setLevel(logging.DEBUG)
+logger.addHandler(loggerHandler)
 
 pickpath = {}
 taskIndex, orderIndex = 0,0
@@ -166,7 +166,7 @@ def parseExperimentDictionary(experimentData):
                         ))
                         cartTotal += numItems
 
-                tasks_in_order.append(RackOrders(
+                tasks_in_order.append(PickingTask(
                     task_id=taskId,
                     order_id=orderId,
                     rack=rack,
@@ -219,7 +219,7 @@ def runTask(pickpaths):
     Args:
         cartSet (list): list of carts in a task, ordered
     """
-    for pickorder in pickpaths:  # type: RackOrders
+    for pickorder in pickpaths:  # type: PickingTask
         logger.info("TASK START: %s" % pickorder)
 
         initReceive(pickorder.receive_bin.tag)
@@ -231,7 +231,7 @@ def runTask(pickpaths):
                 reset()
                 orderInProgress = True
 
-def runPickPath(pickpath):  # type: (RackOrders) -> None
+def runPickPath(pickpath):  # type: (PickingTask) -> None
     """Function that runs a full pick path.
 
     Args:

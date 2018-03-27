@@ -10,7 +10,7 @@ class ReceiveBin(object):
         self.expected_count = expected_count
 
 
-class RackOrders(object):
+class PickingTask(object):
     def __init__(self, task_id, order_id, rack, source_bins, receive_bin):
         self.task_id = task_id
         self.order_id = order_id
