@@ -1,7 +1,16 @@
+import json
 import os
 import logging
 from models import SourceBin, PickingTask, ReceiveBin
 from constants import RACKS
+
+
+def get_pick_paths_from_user_choice():
+    """ Allows a user to select pick paths and then parses the selected JSON file. """
+    selected_filename = choose_pick_path_file()
+    data = readJsonFile(selected_filename)
+    pickpaths = parseExperimentDictionary(data)
+    return pickpaths
 
 
 def choose_pick_path_file():
@@ -54,6 +63,22 @@ def configure_logger(logger, level=logging.DEBUG):
     loggerHandler.setLevel(level)
     logger.addHandler(loggerHandler)
     return logger
+
+
+def readJsonFile(filename):
+    """Function which reads json file.
+
+    Args:
+        filename (str): name of json file parsed; use format for json
+        specified here: https://goo.gl/Qs4dio
+
+    Returns:
+        data (dict): json data as python dictionary
+    """
+    fileh = open(filename)
+    data = json.load(fileh)
+    fileh.close()
+    return data
 
 
 def parseExperimentDictionary(experimentData):

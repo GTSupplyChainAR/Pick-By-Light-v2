@@ -39,20 +39,6 @@ sockhub = socket(AF_INET, SOCK_DGRAM)
 sockhub.bind(('', 3865))
 sockhub.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
 
-def readJsonFile(filename):
-    """Function which reads json file.
-
-    Args:
-        filename (str): name of json file parsed; use format for json 
-        specified here: https://goo.gl/Qs4dio
-
-    Returns:
-        data (dict): json data as python dictionary
-    """
-    fileh = open(filename)
-    data = json.load(fileh)
-    fileh.close()
-    return data
 
 def ChangeDisplay(sockcntrl,display,number, setup=False):
     """Function that changes a particular display to show a number.
@@ -198,12 +184,7 @@ def runPickPath(pickpath):  # type: (PickingTask) -> None
 
 def main():
     reset()
-
-    selected_filename = utils.choose_pick_path_file()
-    data = readJsonFile(selected_filename)
-
-    pickpaths = utils.parseExperimentDictionary(data)
-
+    pickpaths = utils.get_pick_paths_from_user_choice()
     runTask(pickpaths)
 
 if __name__ == "__main__":
