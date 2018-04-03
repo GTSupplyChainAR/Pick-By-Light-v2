@@ -11,6 +11,7 @@ Todo:
     * Fix docstrings (esp ChangeDisplay)
     * Change recvfrom to recv in receivePackets func
 """
+import os
 import json
 import re
 import copy
@@ -18,21 +19,13 @@ from time import sleep, time
 from socket import *
 import logging
 from models import SourceBin, PickingTask, ReceiveBin
+import utils
 
 # Setup logging
 logger = logging.getLogger(os.path.basename(__file__))
-logger.setLevel(logging.DEBUG)
-loggerHandler = logging.StreamHandler()
-loggerFormatter = logging.Formatter('%(asctime)-20s : %(name)-14s : %(levelname)-8s : %(message)s')
-loggerHandler.setFormatter(loggerFormatter)
-loggerHandler.setLevel(logging.DEBUG)
-logger.addHandler(loggerHandler)
-
-pickpath = {}
-taskIndex, orderIndex = 0,0
+logger = utils.configure_logger(logger)
 
 carts = ["C11", "C12", "C13"]
-racks = ["A", "B"]
 
 # Pickpath to test displays
 pp = {"A11": 88, "A12": 88, "A13": 88, "A21": 88, "A22": 88, "A23": 88, "A31": 88, "A32": 88, "A33": 88, "A41": 88,
@@ -46,20 +39,6 @@ sockhub = socket(AF_INET, SOCK_DGRAM)
 sockhub.bind(('', 3865))
 sockhub.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
 
-def readJsonFile(filename):
-    """Function which reads json file.
-
-    Args:
-        filename (str): name of json file parsed; use format for json 
-        specified here: https://goo.gl/Qs4dio
-
-    Returns:
-        data (dict): json data as python dictionary
-    """
-    fileh = open(filename)
-    data = json.load(fileh)
-    fileh.close()
-    return data
 
 def ChangeDisplay(sockcntrl,display,number, setup=False):
     """Function that changes a particular display to show a number.
@@ -123,80 +102,6 @@ def press():
 
             return display
 
-def displayCountReceive(receiveDisplay, previousTotal):
-    """Function which decrements count left to pick on receive bin.
-
-    Args:
-        receiveDisplay (str): id of display corresponding to receive bin
-        previousTotal (int): int representing the value we decrement from
-    """
-    pass
-
-def parseExperimentDictionary(experimentData):
-    """Function which parses dictionary with experiment data from json file.
-
-    Args:
-        experimentData (dict): dictionary of structured experiment data 
-    """
-    tasks = experimentData['tasks']
-    global taskIndex, orderIndex
-    tasksReturn = []
-    while taskIndex < len(tasks):
-        orders = tasks[taskIndex]['orders']
-        taskId = tasks[taskIndex]['taskId']
-
-        orderIndex = 0
-
-        tasks_in_order = []
-        while orderIndex < len(orders):
-
-            orderId = orders[orderIndex]['orderId']
-            receiveBin = orders[orderIndex]['receivingBinTag']
-
-            for rack in racks:
-                source_bins = []
-
-                cartTotal = 0
-                for source_bin in orders[orderIndex]['sourceBins']:
-                    if source_bin['binTag'][0] == rack:
-                        numItems = source_bin['numItems']
-                        source_bins.append(SourceBin(
-                            tag=source_bin['binTag'],
-                            count=numItems
-                        ))
-                        cartTotal += numItems
-
-                tasks_in_order.append(PickingTask(
-                    task_id=taskId,
-                    order_id=orderId,
-                    rack=rack,
-                    source_bins=source_bins,
-                    receive_bin=ReceiveBin(
-                        tag=receiveBin,
-                        expected_count=cartTotal,
-                    )
-                ))
-
-            orderIndex += 1
-
-        tasks_ordered_by_rack = sorted(tasks_in_order, key=lambda rack_orders: rack_orders.rack)
-
-        tasksReturn.extend(tasks_ordered_by_rack)
-
-        taskIndex += 1
-    return tasksReturn
-
-def changePickPathOrder(pick_paths):
-    """From originally parsed pickpaths from json file, change order to put all orders together
-    based on what rack they're from. Return an ordered list.
-    """
-    ordered_pick_paths = []
-    for rack in racks:
-        for pp in pick_paths:
-            if rack in pp.keys():
-                ordered_pick_paths.append(pp[rack])
-
-    return ordered_pick_paths
 
 def initDisplays(pickpath):
     """Function which starts the order on the displays.
@@ -207,10 +112,6 @@ def initDisplays(pickpath):
     for display, quantity in pickpath.items():
         ChangeDisplay(sockhub, display, NumberConvert(quantity), False)
         sleep(0.15)
-
-def runExperiment():
-    """
-    """
 
 
 def runTask(pickpaths):
@@ -230,6 +131,7 @@ def runTask(pickpaths):
                 runPickPath(pickorder)
                 reset()
                 orderInProgress = True
+
 
 def runPickPath(pickpath):  # type: (PickingTask) -> None
     """Function that runs a full pick path.
@@ -280,19 +182,17 @@ def runPickPath(pickpath):  # type: (PickingTask) -> None
             logger.warning("Unexpected state!")
 
 
-def main(args):
+def main():
     reset()
-    data = readJsonFile(args)
-    pickpaths = parseExperimentDictionary(data)
+    pickpaths = utils.get_pick_paths_from_user_choice()
     runTask(pickpaths)
 
 if __name__ == "__main__":
-    import sys
     try:
-        main(sys.argv[1])
+        main()
     except Exception as exception:
         print("Experiment Failed.")
         print(exception)
         raise
-    except:
+    finally:
         print("\nExperiment Complete.")

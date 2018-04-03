@@ -13,125 +13,76 @@ Todo:
 """
 import json
 import copy
+import logging
+import os
+import utils
+from models import PickingTask
 
-pickpath = {}
-taskIndex, orderIndex = 0,0
+
+# Setup logging
+logger = logging.getLogger(os.path.basename(__file__))
+logger = utils.configure_logger(logger)
+
 
 carts = ["C11", "C12", "C13"]
-racks = ["A", "B"]
 
-def changePickPathOrder(pick_paths):
-    """From originally parsed pickpaths from json file, change order to put all orders together
-    based on what rack they're from. Return an ordered list.
+
+def get_barcode_from_input():
+    barcode = input("Barcode: ")[4:]
+    return barcode
+
+
+def play_error_sound():
+    print("\a")  # only checked on macOS
+
+
+def compareBarcode(pickpaths):
+    """Function that runs a full task with a set of carts and a list of pickpaths.
+
+    Args:
+        cartSet (list): list of carts in a task, ordered
     """
-    ordered_pick_paths = []
-    for rack in racks:
-        for pp in pick_paths:
-            if rack in pp.keys():
-                ordered_pick_paths.append(pp[rack])
+    for pickorder in pickpaths:  # type: PickingTask
+        logger.info("TASK START: %s" % pickorder)
 
-    return ordered_pick_paths
+        expected_source_bins = set([bin.tag for bin in pickorder.source_bins])
+        logger.debug('\tExpecting source bins to be scanned: %s' % list(expected_source_bins))
 
-def jsonInputHandler(filename):
-    """Take json file containing tasks which contain orders and return dictionaries
-    {
-        "tasks": [
-            {
-                "orders": [
-                    {
-                        "A32": 1,
-                        "B31": 2,
-                        "target": "C11"
-                    },
-                    {
-                        "A41": 3,
-                        "target": "C12"
-                    }
-                ]
-            }
-        ]
-    }
+        # Wait for all source bins to be scanned
+        while expected_source_bins:
+            barcode = get_barcode_from_input()
+            if barcode not in expected_source_bins:
+                logger.warning('\t\tUnexpected barcode: %s' % barcode)
+                play_error_sound()
+            else:
+                logger.info('\t\tCorrect source bin barcode scanned: %s' % barcode)
+                expected_source_bins.remove(barcode)
 
-    Keyword arguments:
-    filename - name of json file
+        # Wait for receive bin to be scanned
+        receive_bin_scanned = False
+        while not receive_bin_scanned:
+            barcode = get_barcode_from_input()
+            if barcode != pickorder.receive_bin.tag:
+                logger.info('\t\tUnexpected barcode: %s' % barcode)
+                play_error_sound()
+            else:
+                logger.info('\t\tCorrect receive bin barcode scanned: %s' % barcode)
+                receive_bin_scanned = True
 
-    Returns:
-    returnList - nested list of separate orders
-    """
-    fileh = open(filename)
-    data = json.load(fileh)
-    fileh.close()
-    tasks = data['tasks']
-    global taskIndex, orderIndex
-    tasksReturn = []
-    while taskIndex < len(tasks):  
-        orders = tasks[taskIndex]['orders']
-        taskId = tasks[taskIndex]['taskId']
-        
-        taskIndex += 1
-        orderIndex = 0
+        logger.info("TASK END: %s" % pickorder)
 
-        pick_paths = []
-        while orderIndex < len(orders):
-            sourceBins = orders[orderIndex]['sourceBins']
 
-            orderId = orders[orderIndex]['orderId']
-            receiveBin = orders[orderIndex]['receivingBinTag']
-            
-            orderIndex += 1
-            
-            rack_orders = {} 
-            for rack in racks: 
-                pickpath = {}
-                    
-                cartTotal = 0
-                for source_bin in sourceBins:
-                    if source_bin['binTag'][0] == rack:
-                        pickpath[source_bin['binTag']] = source_bin['numItems']
-                        cartTotal += source_bin['numItems']
+def main():
+    pickpaths = utils.get_pick_paths_from_user_choice()
+    compareBarcode(pickpaths)
 
-                if pickpath != {}:
-                    pickpath[receiveBin] = cartTotal
-                    cloned_pick_path = copy.deepcopy(pickpath)
-                    rack_orders[rack] = cloned_pick_path
-
-            cloned_racks = copy.deepcopy(rack_orders)
-            pick_paths.append(cloned_racks)
-
-        ordered_pick_paths = changePickPathOrder(pick_paths)
-        cloned_pick_paths = copy.deepcopy(ordered_pick_paths)
-        tasksReturn.append(cloned_pick_paths)
-    return tasksReturn
-
-def compareBarcode(checkList):
-    """Take a list of order lists and iterate through to check if barcodes match orders. If not, beep on laptop
-
-    Keyword arguments:
-    checkList - nested list of separate orders
-
-    Returns:
-    None
-    """
-    for task in checkList:
-        for order in task:
-            print(order)
-            while list(order) != []:
-                barcode = input("Barcode: ")[4:]
-                if barcode not in order:
-                    print("\a")
-                else:
-                    order.pop(barcode)
-
-def main(args):
-    checkList = jsonInputHandler(args)
-    compareBarcode(checkList)
 
 if __name__ == "__main__":
     import sys
     try:
-        main(sys.argv[1])
+        main()
     except Exception as exception:
         print("Experiment Failed.")
         print(exception)
-    except:
+    finally:
         print("\nExperiment Complete.")
