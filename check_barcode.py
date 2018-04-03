@@ -31,8 +31,9 @@ def get_barcode_from_input():
     barcode = input("Barcode: ")[4:]
     return barcode
 
+
 def play_error_sound():
-    print("\a")
+    print("\a")  # only checked on macOS
 
 
 def compareBarcode(pickpaths):
@@ -45,13 +46,16 @@ def compareBarcode(pickpaths):
         logger.info("TASK START: %s" % pickorder)
 
         expected_source_bins = set([bin.tag for bin in pickorder.source_bins])
+        logger.debug('\tExpecting source bins to be scanned: %s' % list(expected_source_bins))
 
         # Wait for all source bins to be scanned
         while expected_source_bins:
             barcode = get_barcode_from_input()
             if barcode not in expected_source_bins:
+                logger.warning('\t\tUnexpected barcode: %s' % barcode)
                 play_error_sound()
             else:
+                logger.info('\t\tCorrect source bin barcode scanned: %s' % barcode)
                 expected_source_bins.remove(barcode)
 
         # Wait for receive bin to be scanned
@@ -59,9 +63,13 @@ def compareBarcode(pickpaths):
         while not receive_bin_scanned:
             barcode = get_barcode_from_input()
             if barcode != pickorder.receive_bin.tag:
+                logger.info('\t\tUnexpected barcode: %s' % barcode)
                 play_error_sound()
             else:
+                logger.info('\t\tCorrect receive bin barcode scanned: %s' % barcode)
                 receive_bin_scanned = True
+
+        logger.info("TASK END: %s" % pickorder)
 
 
 def main():
