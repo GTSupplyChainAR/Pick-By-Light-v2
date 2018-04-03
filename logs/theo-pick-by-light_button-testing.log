@@ -1,0 +1,539 @@
+2018-03-29 11:29:18,505 : pick-by-light.py : INFO     : TASK START: Task (Order ID=17, Task ID=1): 3 bins -> C11
+2018-03-29 11:29:29,447 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:29:29,448 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:29:32,201 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:29:34,050 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:29:36,463 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:29:39,068 : pick-by-light.py : INFO     : TASK START: Task (Order ID=17, Task ID=2): 3 bins -> C12
+2018-03-29 11:29:40,302 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:29:40,302 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:29:43,970 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:29:45,107 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:29:46,336 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:29:49,818 : pick-by-light.py : INFO     : TASK START: Task (Order ID=17, Task ID=3): 2 bins -> C13
+2018-03-29 11:29:54,328 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:29:57,105 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:30:00,160 : pick-by-light.py : INFO     : TASK START: Task (Order ID=17, Task ID=1): 5 bins -> C11
+2018-03-29 11:30:02,171 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:30:02,171 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:30:04,359 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:30:06,304 : pick-by-light.py : DEBUG    : Subject pressed B21.
+2018-03-29 11:30:07,208 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:30:08,659 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:30:10,809 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:30:13,267 : pick-by-light.py : INFO     : TASK START: Task (Order ID=17, Task ID=2): 4 bins -> C12
+2018-03-29 11:30:15,371 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:30:15,371 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:30:21,971 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:30:22,073 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:30:22,175 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:30:22,278 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:30:22,381 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:30:22,381 : pick-by-light.py : WARNING  : Display somehow B31 jumped into negative numbers! (-1)
+2018-03-29 11:30:23,999 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:30:24,000 : pick-by-light.py : WARNING  : Display somehow B41 jumped into negative numbers! (-1)
+2018-03-29 11:30:24,533 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:30:24,533 : pick-by-light.py : WARNING  : Display somehow B31 jumped into negative numbers! (-1)
+2018-03-29 11:30:26,478 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:30:26,482 : pick-by-light.py : WARNING  : Display somehow B23 jumped into negative numbers! (-1)
+2018-03-29 11:30:31,086 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:30:34,790 : pick-by-light.py : INFO     : TASK START: Task (Order ID=17, Task ID=3): 4 bins -> C13
+2018-03-29 11:30:37,080 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:30:37,080 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:30:39,071 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:30:41,324 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:30:43,475 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:30:45,933 : pick-by-light.py : DEBUG    : Subject pressed B22.
+2018-03-29 11:30:47,502 : pick-by-light.py : INFO     : TASK START: Task (Order ID=15, Task ID=1): 5 bins -> C11
+2018-03-29 11:30:49,715 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:30:49,716 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:30:52,384 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:30:55,150 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:30:56,786 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:30:57,913 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:30:59,961 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:31:03,495 : pick-by-light.py : INFO     : TASK START: Task (Order ID=15, Task ID=2): 4 bins -> C12
+2018-03-29 11:31:04,932 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:31:04,933 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:31:07,231 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:31:08,869 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:31:11,225 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:31:13,376 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:31:16,550 : pick-by-light.py : INFO     : TASK START: Task (Order ID=15, Task ID=3): 3 bins -> C13
+2018-03-29 11:31:18,090 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:31:18,090 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:31:18,090 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:31:18,091 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:31:21,055 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:31:23,410 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:31:25,970 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:31:29,145 : pick-by-light.py : INFO     : TASK START: Task (Order ID=15, Task ID=1): 3 bins -> C11
+2018-03-29 11:31:32,049 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:31:34,264 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:31:35,186 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:31:37,030 : pick-by-light.py : INFO     : TASK START: Task (Order ID=15, Task ID=2): 4 bins -> C12
+2018-03-29 11:31:38,932 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:31:38,932 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:31:39,999 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:31:42,047 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:31:44,507 : pick-by-light.py : DEBUG    : Subject pressed B21.
+2018-03-29 11:31:45,324 : pick-by-light.py : DEBUG    : Subject pressed B22.
+2018-03-29 11:31:48,704 : pick-by-light.py : INFO     : TASK START: Task (Order ID=15, Task ID=3): 5 bins -> C13
+2018-03-29 11:31:50,957 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:31:50,958 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:31:51,160 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:31:51,161 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:31:53,620 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:31:59,967 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:32:01,298 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:32:02,678 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:32:05,512 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:32:07,954 : pick-by-light.py : INFO     : TASK START: Task (Order ID=11, Task ID=1): 5 bins -> C11
+2018-03-29 11:32:10,108 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:32:10,109 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:32:12,459 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:32:15,839 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:32:30,482 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:32:31,403 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:32:31,666 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:32:31,667 : pick-by-light.py : WARNING  : Display somehow A31 jumped into negative numbers! (-1)
+2018-03-29 11:32:32,310 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:32:34,990 : pick-by-light.py : INFO     : TASK START: Task (Order ID=11, Task ID=2): 5 bins -> C12
+2018-03-29 11:32:36,736 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:32:36,736 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:32:36,737 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:32:36,737 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:32:39,083 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:32:40,793 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:32:43,915 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:32:45,330 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:32:48,608 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:32:51,066 : pick-by-light.py : INFO     : TASK START: Task (Order ID=11, Task ID=3): 5 bins -> C13
+2018-03-29 11:32:53,421 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:32:53,421 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:32:53,422 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:32:53,422 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:32:53,423 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:32:53,423 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:32:53,424 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:32:53,424 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:32:55,979 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:32:56,814 : pick-by-light.py : DEBUG    : Subject pressed A12.
+2018-03-29 11:32:58,641 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:33:00,110 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:33:05,400 : pick-by-light.py : DEBUG    : Subject pressed A41.
+2018-03-29 11:33:07,654 : pick-by-light.py : INFO     : TASK START: Task (Order ID=11, Task ID=1): 3 bins -> C11
+2018-03-29 11:33:10,011 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:33:10,011 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:33:13,389 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:33:13,899 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:33:15,230 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:33:15,231 : pick-by-light.py : WARNING  : Display somehow B42 jumped into negative numbers! (-1)
+2018-03-29 11:33:17,483 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:33:20,351 : pick-by-light.py : INFO     : TASK START: Task (Order ID=11, Task ID=2): 4 bins -> C12
+2018-03-29 11:33:22,454 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:33:22,455 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:33:22,455 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:33:22,456 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:33:24,960 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:33:25,151 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:33:26,955 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:33:30,897 : pick-by-light.py : DEBUG    : Subject pressed B22.
+2018-03-29 11:33:30,898 : pick-by-light.py : WARNING  : Display somehow B22 jumped into negative numbers! (-1)
+2018-03-29 11:33:38,169 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:33:40,421 : pick-by-light.py : INFO     : TASK START: Task (Order ID=11, Task ID=3): 6 bins -> C13
+2018-03-29 11:33:42,424 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:33:42,424 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:33:44,414 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:33:48,407 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:33:50,149 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:33:51,042 : pick-by-light.py : DEBUG    : Subject pressed B33.
+2018-03-29 11:33:52,811 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:33:56,906 : pick-by-light.py : DEBUG    : Subject pressed B22.
+2018-03-29 11:33:58,055 : pick-by-light.py : INFO     : TASK START: Task (Order ID=13, Task ID=1): 4 bins -> C11
+2018-03-29 11:33:59,723 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:33:59,724 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:33:59,774 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:33:59,774 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:03,562 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:34:06,327 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:34:08,478 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:34:15,441 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:34:20,357 : pick-by-light.py : INFO     : TASK START: Task (Order ID=13, Task ID=2): 5 bins -> C12
+2018-03-29 11:34:22,055 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:34:22,055 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:22,055 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:34:22,056 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:22,056 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:34:22,057 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:22,057 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:34:22,057 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:30,596 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:34:30,698 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:34:30,802 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:34:30,905 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:34:38,954 : pick-by-light.py : DEBUG    : Subject pressed A23.
+2018-03-29 11:34:41,041 : pick-by-light.py : INFO     : TASK START: Task (Order ID=13, Task ID=3): 4 bins -> C13
+2018-03-29 11:34:42,543 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:34:42,543 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:42,544 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:34:42,544 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:42,545 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:34:42,545 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:42,545 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:34:42,546 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:45,444 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:34:46,470 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:34:49,642 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:34:49,949 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:34:51,383 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:34:54,259 : pick-by-light.py : INFO     : TASK START: Task (Order ID=13, Task ID=1): 4 bins -> C11
+2018-03-29 11:34:56,167 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:34:56,171 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:56,171 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:34:56,172 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:56,186 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:34:56,186 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:34:57,939 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:34:59,210 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:35:00,906 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:35:02,851 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:35:06,640 : pick-by-light.py : INFO     : TASK START: Task (Order ID=13, Task ID=2): 4 bins -> C12
+2018-03-29 11:35:08,253 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:35:08,254 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:35:09,610 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:35:11,351 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:35:12,272 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:35:16,782 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:35:18,222 : pick-by-light.py : INFO     : TASK START: Task (Order ID=13, Task ID=3): 3 bins -> C13
+2018-03-29 11:35:19,361 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:35:19,361 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:35:19,362 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:35:19,362 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:35:21,283 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:35:23,230 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:35:24,049 : pick-by-light.py : DEBUG    : Subject pressed B33.
+2018-03-29 11:35:26,096 : pick-by-light.py : INFO     : TASK START: Task (Order ID=18, Task ID=1): 5 bins -> C11
+2018-03-29 11:35:29,168 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:35:33,982 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:35:34,015 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:35:35,587 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:35:36,234 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:35:39,511 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:35:43,644 : pick-by-light.py : INFO     : TASK START: Task (Order ID=18, Task ID=2): 4 bins -> C12
+2018-03-29 11:35:46,166 : pick-by-light.py : DEBUG    : Subject pressed A23.
+2018-03-29 11:35:47,596 : pick-by-light.py : DEBUG    : Subject pressed A12.
+2018-03-29 11:35:49,137 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:35:50,981 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:35:53,744 : pick-by-light.py : INFO     : TASK START: Task (Order ID=18, Task ID=3): 4 bins -> C13
+2018-03-29 11:35:55,042 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:35:55,042 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:35:57,737 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:35:59,274 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:36:04,599 : pick-by-light.py : DEBUG    : Subject pressed A12.
+2018-03-29 11:36:04,600 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:36:08,899 : pick-by-light.py : INFO     : TASK START: Task (Order ID=18, Task ID=1): 3 bins -> C11
+2018-03-29 11:36:14,940 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:36:14,941 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:15,352 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:36:16,976 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:36:22,118 : pick-by-light.py : DEBUG    : Subject pressed B21.
+2018-03-29 11:36:26,877 : pick-by-light.py : INFO     : TASK START: Task (Order ID=18, Task ID=2): 4 bins -> C12
+2018-03-29 11:36:29,053 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:36:29,054 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:29,054 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:36:29,055 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:29,055 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:36:29,055 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:29,056 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:36:29,056 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:29,276 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:36:29,277 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:31,646 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:36:35,013 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:36:41,462 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:36:42,486 : pick-by-light.py : DEBUG    : Subject pressed B21.
+2018-03-29 11:36:44,432 : pick-by-light.py : INFO     : TASK START: Task (Order ID=18, Task ID=3): 5 bins -> C13
+2018-03-29 11:36:46,513 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:36:46,514 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:46,514 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:36:46,515 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:46,515 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:36:46,515 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:47,403 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:36:47,403 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:48,324 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:36:50,269 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:36:51,190 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:36:53,136 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:36:54,774 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:36:56,345 : pick-by-light.py : INFO     : TASK START: Task (Order ID=14, Task ID=1): 4 bins -> C11
+2018-03-29 11:36:57,813 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:36:57,814 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:57,814 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:36:57,815 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:57,815 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:36:57,815 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:36:57,867 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:36:57,867 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:37:00,201 : pick-by-light.py : DEBUG    : Subject pressed A12.
+2018-03-29 11:37:01,329 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:37:04,809 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:37:12,386 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:37:14,077 : pick-by-light.py : INFO     : TASK START: Task (Order ID=14, Task ID=2): 5 bins -> C12
+2018-03-29 11:37:15,704 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:37:15,704 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:37:15,766 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:37:15,766 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:37:18,019 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:37:20,373 : pick-by-light.py : DEBUG    : Subject pressed A41.
+2018-03-29 11:37:21,603 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:37:22,731 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:37:27,269 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:37:29,460 : pick-by-light.py : INFO     : TASK START: Task (Order ID=14, Task ID=3): 4 bins -> C13
+2018-03-29 11:37:31,210 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:37:31,210 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:37:31,211 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:37:31,211 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:37:31,212 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:37:31,212 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:37:31,433 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:37:31,433 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:37:33,276 : pick-by-light.py : DEBUG    : Subject pressed A23.
+2018-03-29 11:37:35,119 : pick-by-light.py : DEBUG    : Subject pressed A41.
+2018-03-29 11:37:37,884 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:37:38,805 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:37:43,926 : pick-by-light.py : INFO     : TASK START: Task (Order ID=14, Task ID=1): 4 bins -> C11
+2018-03-29 11:37:47,407 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:37:50,890 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:37:53,757 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:37:58,876 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:38:01,473 : pick-by-light.py : INFO     : TASK START: Task (Order ID=14, Task ID=2): 4 bins -> C12
+2018-03-29 11:38:03,252 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:38:03,252 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:38:04,815 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:38:10,754 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:38:10,961 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:38:11,384 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:38:11,385 : pick-by-light.py : WARNING  : Display somehow B32 jumped into negative numbers! (-1)
+2018-03-29 11:38:11,677 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:38:11,678 : pick-by-light.py : WARNING  : Display somehow B32 jumped into negative numbers! (-1)
+2018-03-29 11:38:14,134 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:38:14,135 : pick-by-light.py : WARNING  : Display somehow B32 jumped into negative numbers! (-1)
+2018-03-29 11:38:18,877 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:38:22,737 : pick-by-light.py : INFO     : TASK START: Task (Order ID=14, Task ID=3): 4 bins -> C13
+2018-03-29 11:38:35,179 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:38:41,884 : pick-by-light.py : DEBUG    : Subject pressed B33.
+2018-03-29 11:38:41,986 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:38:42,293 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:38:42,293 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:38:42,395 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:38:42,396 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:38:42,704 : pick-by-light.py : DEBUG    : Subject pressed B22.
+2018-03-29 11:38:53,966 : pick-by-light.py : INFO     : TASK START: Task (Order ID=12, Task ID=1): 4 bins -> C11
+2018-03-29 11:38:55,680 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:38:55,680 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:38:59,087 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:39:01,339 : pick-by-light.py : DEBUG    : Subject pressed A41.
+2018-03-29 11:39:03,706 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:39:08,405 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:39:10,248 : pick-by-light.py : INFO     : TASK START: Task (Order ID=12, Task ID=2): 3 bins -> C12
+2018-03-29 11:39:12,112 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:39:12,112 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:39:12,113 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:39:12,113 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:39:16,090 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:39:17,211 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:39:21,205 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:39:23,560 : pick-by-light.py : INFO     : TASK START: Task (Order ID=12, Task ID=3): 4 bins -> C13
+2018-03-29 11:39:25,056 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:39:25,057 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:39:25,300 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:39:25,301 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:39:27,458 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:39:28,680 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:39:31,342 : pick-by-light.py : DEBUG    : Subject pressed A41.
+2018-03-29 11:39:35,338 : pick-by-light.py : DEBUG    : Subject pressed A23.
+2018-03-29 11:39:38,203 : pick-by-light.py : INFO     : TASK START: Task (Order ID=12, Task ID=1): 5 bins -> C11
+2018-03-29 11:39:40,488 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:39:40,489 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:39:40,489 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:39:40,490 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:39:43,630 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:39:45,473 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:39:46,599 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:39:49,364 : pick-by-light.py : DEBUG    : Subject pressed B33.
+2018-03-29 11:39:52,846 : pick-by-light.py : DEBUG    : Subject pressed B21.
+2018-03-29 11:39:54,179 : pick-by-light.py : INFO     : TASK START: Task (Order ID=12, Task ID=2): 3 bins -> C12
+2018-03-29 11:39:56,739 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:39:56,739 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:39:56,740 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:39:56,740 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:00,117 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:40:01,448 : pick-by-light.py : DEBUG    : Subject pressed B33.
+2018-03-29 11:40:02,984 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:40:06,363 : pick-by-light.py : INFO     : TASK START: Task (Order ID=12, Task ID=3): 3 bins -> C13
+2018-03-29 11:40:07,506 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:40:07,506 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:09,398 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:40:16,484 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:40:22,542 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:40:25,104 : pick-by-light.py : INFO     : TASK START: Task (Order ID=16, Task ID=1): 3 bins -> C11
+2018-03-29 11:40:27,581 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:40:27,581 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:27,582 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:40:27,582 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:27,582 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:40:27,583 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:27,583 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:40:27,584 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:27,584 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:40:27,584 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:27,766 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:40:27,766 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:31,555 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:40:31,657 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:40:32,169 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:40:33,704 : pick-by-light.py : DEBUG    : Subject pressed A23.
+2018-03-29 11:40:33,705 : pick-by-light.py : WARNING  : Display somehow A23 jumped into negative numbers! (-3)
+2018-03-29 11:40:35,956 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:40:40,564 : pick-by-light.py : INFO     : TASK START: Task (Order ID=16, Task ID=2): 3 bins -> C12
+2018-03-29 11:40:42,223 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:40:42,224 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:45,172 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:40:47,117 : pick-by-light.py : DEBUG    : Subject pressed A41.
+2018-03-29 11:40:47,220 : pick-by-light.py : DEBUG    : Subject pressed A41.
+2018-03-29 11:40:50,395 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:40:53,876 : pick-by-light.py : INFO     : TASK START: Task (Order ID=16, Task ID=3): 5 bins -> C13
+2018-03-29 11:40:55,952 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:40:55,957 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:55,957 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:40:55,958 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:40:58,586 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:41:00,532 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:41:01,660 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:41:03,706 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:41:06,164 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:41:08,826 : pick-by-light.py : INFO     : TASK START: Task (Order ID=16, Task ID=1): 6 bins -> C11
+2018-03-29 11:41:10,853 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:41:10,853 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:41:11,386 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:41:13,741 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:41:14,049 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:41:15,585 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:41:17,018 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:41:17,122 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:41:18,966 : pick-by-light.py : DEBUG    : Subject pressed B21.
+2018-03-29 11:41:18,966 : pick-by-light.py : WARNING  : Display somehow B21 jumped into negative numbers! (-1)
+2018-03-29 11:41:20,910 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:41:20,910 : pick-by-light.py : WARNING  : Display somehow B12 jumped into negative numbers! (-1)
+2018-03-29 11:41:22,856 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:41:25,313 : pick-by-light.py : INFO     : TASK START: Task (Order ID=16, Task ID=2): 5 bins -> C12
+2018-03-29 11:41:26,887 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:41:26,887 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:41:30,433 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:41:32,378 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:41:33,711 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:41:35,142 : pick-by-light.py : DEBUG    : Subject pressed B21.
+2018-03-29 11:41:35,962 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:41:35,962 : pick-by-light.py : WARNING  : Display somehow B31 jumped into negative numbers! (-1)
+2018-03-29 11:41:44,668 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:41:47,944 : pick-by-light.py : INFO     : TASK START: Task (Order ID=16, Task ID=3): 5 bins -> C13
+2018-03-29 11:41:50,018 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:41:50,018 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:41:50,019 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:41:50,019 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:41:50,020 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:41:50,020 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:41:50,095 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:41:50,095 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:41:51,631 : pick-by-light.py : DEBUG    : Subject pressed B22.
+2018-03-29 11:41:55,317 : pick-by-light.py : DEBUG    : Subject pressed B33.
+2018-03-29 11:41:56,380 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:41:57,773 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:42:00,743 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:42:03,857 : pick-by-light.py : INFO     : TASK START: Task (Order ID=19, Task ID=1): 4 bins -> C11
+2018-03-29 11:42:05,291 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:42:05,291 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:42:09,037 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:42:10,076 : pick-by-light.py : DEBUG    : Subject pressed A12.
+2018-03-29 11:42:11,289 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:42:11,478 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:42:13,645 : pick-by-light.py : DEBUG    : Subject pressed A42.
+2018-03-29 11:42:16,614 : pick-by-light.py : INFO     : TASK START: Task (Order ID=19, Task ID=2): 4 bins -> C12
+2018-03-29 11:42:34,157 : pick-by-light.py : DEBUG    : Subject pressed A12.
+2018-03-29 11:42:37,094 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:42:38,118 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:42:42,623 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:42:47,641 : pick-by-light.py : INFO     : TASK START: Task (Order ID=19, Task ID=3): 4 bins -> C13
+2018-03-29 11:42:49,044 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:42:49,045 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:42:51,346 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:42:52,659 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:42:53,887 : pick-by-light.py : DEBUG    : Subject pressed A41.
+2018-03-29 11:42:57,164 : pick-by-light.py : DEBUG    : Subject pressed A33.
+2018-03-29 11:42:59,930 : pick-by-light.py : INFO     : TASK START: Task (Order ID=19, Task ID=1): 5 bins -> C11
+2018-03-29 11:43:03,923 : pick-by-light.py : DEBUG    : Subject pressed B11.
+2018-03-29 11:43:05,869 : pick-by-light.py : DEBUG    : Subject pressed B31.
+2018-03-29 11:43:07,200 : pick-by-light.py : DEBUG    : Subject pressed B33.
+2018-03-29 11:43:09,350 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:43:15,904 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:43:18,156 : pick-by-light.py : INFO     : TASK START: Task (Order ID=19, Task ID=2): 3 bins -> C12
+2018-03-29 11:43:22,457 : pick-by-light.py : DEBUG    : Subject pressed B22.
+2018-03-29 11:43:27,372 : pick-by-light.py : DEBUG    : Subject pressed B43.
+2018-03-29 11:43:29,215 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:43:31,059 : pick-by-light.py : INFO     : TASK START: Task (Order ID=19, Task ID=3): 4 bins -> C13
+2018-03-29 11:43:33,904 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:43:35,359 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:43:37,714 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:43:40,889 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:43:42,220 : pick-by-light.py : INFO     : TASK START: Task (Order ID=20, Task ID=1): 4 bins -> C11
+2018-03-29 11:43:44,353 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:43:44,353 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:43:47,444 : pick-by-light.py : DEBUG    : Subject pressed A32.
+2018-03-29 11:43:48,467 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:43:50,309 : pick-by-light.py : DEBUG    : Subject pressed A11.
+2018-03-29 11:43:52,153 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:43:56,351 : pick-by-light.py : INFO     : TASK START: Task (Order ID=20, Task ID=2): 4 bins -> C12
+2018-03-29 11:43:58,197 : pick-by-light.py : DEBUG    : Subject pressed C12.
+2018-03-29 11:43:58,198 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:00,754 : pick-by-light.py : DEBUG    : Subject pressed A23.
+2018-03-29 11:44:01,687 : pick-by-light.py : DEBUG    : Subject pressed A22.
+2018-03-29 11:44:04,039 : pick-by-light.py : DEBUG    : Subject pressed A31.
+2018-03-29 11:44:05,977 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:44:08,537 : pick-by-light.py : INFO     : TASK START: Task (Order ID=20, Task ID=3): 3 bins -> C13
+2018-03-29 11:44:09,874 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:44:09,875 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:12,735 : pick-by-light.py : DEBUG    : Subject pressed A43.
+2018-03-29 11:44:15,704 : pick-by-light.py : DEBUG    : Subject pressed A21.
+2018-03-29 11:44:24,408 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:44:24,409 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:24,615 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:44:24,615 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:24,717 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:44:24,718 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:24,820 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:44:24,820 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:24,922 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:44:24,923 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:25,330 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:44:25,335 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:25,433 : pick-by-light.py : DEBUG    : Subject pressed C13.
+2018-03-29 11:44:25,433 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:27,685 : pick-by-light.py : DEBUG    : Subject pressed A13.
+2018-03-29 11:44:31,286 : pick-by-light.py : INFO     : TASK START: Task (Order ID=20, Task ID=1): 4 bins -> C11
+2018-03-29 11:44:32,587 : pick-by-light.py : DEBUG    : Subject pressed C11.
+2018-03-29 11:44:32,587 : pick-by-light.py : WARNING  : Unexpected state!
+2018-03-29 11:44:34,136 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:44:34,957 : pick-by-light.py : DEBUG    : Subject pressed B13.
+2018-03-29 11:44:37,720 : pick-by-light.py : DEBUG    : Subject pressed B32.
+2018-03-29 11:44:38,959 : pick-by-light.py : DEBUG    : Subject pressed B41.
+2018-03-29 11:44:42,943 : pick-by-light.py : INFO     : TASK START: Task (Order ID=20, Task ID=2): 3 bins -> C12
+2018-03-29 11:44:51,032 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:44:57,032 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:45:00,043 : pick-by-light.py : DEBUG    : Subject pressed B22.
+2018-03-29 11:45:00,692 : pick-by-light.py : INFO     : TASK START: Task (Order ID=20, Task ID=3): 4 bins -> C13
+2018-03-29 11:45:04,856 : pick-by-light.py : DEBUG    : Subject pressed B23.
+2018-03-29 11:45:05,574 : pick-by-light.py : DEBUG    : Subject pressed B12.
+2018-03-29 11:45:07,724 : pick-by-light.py : DEBUG    : Subject pressed B42.
+2018-03-29 11:45:10,898 : pick-by-light.py : DEBUG    : Subject pressed B11.
