@@ -1,0 +1,50 @@
+Choose from the files below:
+1   tasks-pick-by-hud_rfid-testing.json
+2   tasks-pick-by-hud_rfid-training.json
+3   tasks-pick-by-paper_none-training.json
+4   tasks-pick-by-paper_none-testing.json
+5   tasks-pick-by-light_button-testing.json
+6   tasks-pick-by-light_button-training.json
+7   tasks-MASTER-training.json
+8   tasks-MASTER-testing.json
+9   tasks-pick-by-paper_barcode-testing.json
+10  tasks-pick-by-paper_barcode-training.json
+
+What file would you like to select?
+> (#) 
+Is this the file you selected?
+./RFID-Study-Task-Generation/output/pick-by-paper_barcode/tasks-pick-by-paper_barcode-training.json
+> (y/n) Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: Barcode: 
+Barcode: 
+Barcode: Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Barcode: 
+Experiment Complete.

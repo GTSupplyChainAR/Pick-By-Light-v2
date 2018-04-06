@@ -1,0 +1,388 @@
+2018-04-03 19:08:05,856 : fml.py         : INFO     : TASK START: Task (Order ID=8, Task ID=1): 4 bins -> C11
+2018-04-03 19:08:27,331 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:08:27,332 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:08:29,863 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:08:31,176 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:08:32,833 : fml.py         : DEBUG    : Subject pressed A21.
+2018-04-03 19:08:36,087 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:10:10,804 : fml.py         : INFO     : TASK START: Task (Order ID=8, Task ID=2): 4 bins -> C12
+2018-04-03 19:10:12,527 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:10:12,527 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:10:14,582 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:10:16,051 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:10:17,997 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:10:21,016 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:10:23,219 : fml.py         : INFO     : TASK START: Task (Order ID=8, Task ID=3): 3 bins -> C13
+2018-04-03 19:10:27,110 : fml.py         : DEBUG    : Subject pressed A12.
+2018-04-03 19:10:29,055 : fml.py         : DEBUG    : Subject pressed A21.
+2018-04-03 19:10:31,671 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:10:33,642 : fml.py         : INFO     : TASK START: Task (Order ID=8, Task ID=1): 4 bins -> C11
+2018-04-03 19:10:35,771 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:10:35,771 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:10:36,838 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:10:39,626 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:10:41,704 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:10:45,226 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:10:47,596 : fml.py         : INFO     : TASK START: Task (Order ID=8, Task ID=2): 5 bins -> C12
+2018-04-03 19:10:49,063 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:10:49,063 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:10:51,170 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:10:52,709 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:10:54,135 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:10:57,011 : fml.py         : DEBUG    : Subject pressed B22.
+2018-04-03 19:10:58,206 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:10:59,303 : fml.py         : INFO     : TASK START: Task (Order ID=8, Task ID=3): 3 bins -> C13
+2018-04-03 19:11:05,202 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:11:06,841 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:11:08,143 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:11:10,835 : fml.py         : INFO     : TASK START: Task (Order ID=3, Task ID=1): 5 bins -> C11
+2018-04-03 19:11:15,241 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:11:16,159 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:11:18,362 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:11:19,847 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:11:21,685 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:11:23,382 : fml.py         : INFO     : TASK START: Task (Order ID=3, Task ID=2): 4 bins -> C12
+2018-04-03 19:11:24,819 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:11:24,820 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:11:27,747 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:11:31,154 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:11:34,591 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:11:39,608 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:11:42,348 : fml.py         : INFO     : TASK START: Task (Order ID=3, Task ID=3): 3 bins -> C13
+2018-04-03 19:11:43,957 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:11:43,958 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:11:51,589 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:11:52,716 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:11:54,866 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:12:00,293 : fml.py         : INFO     : TASK START: Task (Order ID=3, Task ID=1): 6 bins -> C11
+2018-04-03 19:12:02,098 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:12:02,098 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:12:04,901 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:12:06,338 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:12:07,650 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:12:09,966 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:12:12,012 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:12:13,718 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:12:15,243 : fml.py         : INFO     : TASK START: Task (Order ID=3, Task ID=2): 3 bins -> C12
+2018-04-03 19:12:19,613 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:12:20,695 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:12:22,206 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:12:24,409 : fml.py         : INFO     : TASK START: Task (Order ID=3, Task ID=3): 4 bins -> C13
+2018-04-03 19:12:25,913 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:12:25,913 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:12:29,068 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:12:30,071 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:12:39,717 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:12:41,969 : fml.py         : DEBUG    : Subject pressed B43.
+2018-04-03 19:12:43,506 : fml.py         : INFO     : TASK START: Task (Order ID=7, Task ID=1): 5 bins -> C11
+2018-04-03 19:12:49,343 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:12:51,185 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:12:52,722 : fml.py         : DEBUG    : Subject pressed A21.
+2018-04-03 19:12:54,155 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:12:57,227 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:13:00,606 : fml.py         : INFO     : TASK START: Task (Order ID=7, Task ID=2): 5 bins -> C12
+2018-04-03 19:13:02,144 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:13:02,144 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:13:04,320 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:13:05,624 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:13:07,396 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:13:09,255 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:13:11,052 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:13:13,571 : fml.py         : INFO     : TASK START: Task (Order ID=7, Task ID=3): 2 bins -> C13
+2018-04-03 19:13:18,702 : fml.py         : DEBUG    : Subject pressed A21.
+2018-04-03 19:13:20,898 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:13:22,664 : fml.py         : INFO     : TASK START: Task (Order ID=7, Task ID=1): 5 bins -> C11
+2018-04-03 19:13:28,970 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:13:30,099 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:13:32,146 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:13:33,335 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:13:39,620 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:13:40,337 : fml.py         : INFO     : TASK START: Task (Order ID=7, Task ID=2): 4 bins -> C12
+2018-04-03 19:13:46,071 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:13:46,993 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:13:48,938 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:13:50,679 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:13:52,012 : fml.py         : INFO     : TASK START: Task (Order ID=7, Task ID=3): 4 bins -> C13
+2018-04-03 19:13:56,618 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:13:56,926 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:13:58,821 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:14:01,021 : fml.py         : DEBUG    : Subject pressed B43.
+2018-04-03 19:14:02,661 : fml.py         : INFO     : TASK START: Task (Order ID=2, Task ID=1): 4 bins -> C11
+2018-04-03 19:14:04,487 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:14:04,488 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:14:08,497 : fml.py         : DEBUG    : Subject pressed A21.
+2018-04-03 19:14:12,326 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:14:12,799 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:14:14,743 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:14:17,099 : fml.py         : INFO     : TASK START: Task (Order ID=2, Task ID=2): 5 bins -> C12
+2018-04-03 19:14:21,706 : fml.py         : DEBUG    : Subject pressed A12.
+2018-04-03 19:14:23,242 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:14:25,802 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:14:27,651 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:14:29,272 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:14:32,049 : fml.py         : INFO     : TASK START: Task (Order ID=2, Task ID=3): 3 bins -> C13
+2018-04-03 19:14:33,402 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:14:33,402 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:14:38,101 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:14:48,406 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:14:50,890 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:14:54,345 : fml.py         : INFO     : TASK START: Task (Order ID=2, Task ID=1): 5 bins -> C11
+2018-04-03 19:14:59,776 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:15:02,450 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:15:06,463 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:15:07,622 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:15:09,937 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:15:16,696 : fml.py         : INFO     : TASK START: Task (Order ID=2, Task ID=2): 4 bins -> C12
+2018-04-03 19:15:19,978 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:15:21,820 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:15:23,002 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:15:25,100 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:15:27,699 : fml.py         : INFO     : TASK START: Task (Order ID=2, Task ID=3): 4 bins -> C13
+2018-04-03 19:15:28,983 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:15:28,983 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:15:32,518 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:15:36,867 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:15:37,482 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:15:39,940 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:15:41,578 : fml.py         : INFO     : TASK START: Task (Order ID=10, Task ID=1): 4 bins -> C11
+2018-04-03 19:15:53,877 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:15:56,132 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:15:56,739 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:15:58,100 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:16:00,351 : fml.py         : INFO     : TASK START: Task (Order ID=10, Task ID=2): 6 bins -> C12
+2018-04-03 19:16:02,045 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:16:02,045 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:16:08,536 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:16:09,686 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:16:13,625 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:16:14,254 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:16:20,796 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:16:23,101 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:16:26,647 : fml.py         : INFO     : TASK START: Task (Order ID=10, Task ID=3): 6 bins -> C13
+2018-04-03 19:16:28,529 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:16:28,529 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:16:31,242 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:16:32,368 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:16:35,045 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:16:40,215 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:16:48,092 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:16:50,083 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:16:52,643 : fml.py         : INFO     : TASK START: Task (Order ID=10, Task ID=1): 5 bins -> C11
+2018-04-03 19:16:56,841 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:16:58,089 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:17:01,347 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:17:04,384 : fml.py         : DEBUG    : Subject pressed B43.
+2018-04-03 19:17:07,689 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:17:12,075 : fml.py         : INFO     : TASK START: Task (Order ID=10, Task ID=2): 4 bins -> C12
+2018-04-03 19:17:15,171 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:17:17,014 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:17:19,677 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:17:22,236 : fml.py         : DEBUG    : Subject pressed B43.
+2018-04-03 19:17:29,746 : fml.py         : INFO     : TASK START: Task (Order ID=10, Task ID=3): 4 bins -> C13
+2018-04-03 19:17:32,887 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:17:32,887 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:17:35,769 : fml.py         : DEBUG    : Subject pressed B22.
+2018-04-03 19:17:36,880 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:17:38,824 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:17:40,360 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:17:41,590 : fml.py         : INFO     : TASK START: Task (Order ID=1, Task ID=1): 5 bins -> C11
+2018-04-03 19:17:48,166 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:17:49,938 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:17:51,728 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:17:53,161 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:17:55,232 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:18:00,021 : fml.py         : INFO     : TASK START: Task (Order ID=1, Task ID=2): 4 bins -> C12
+2018-04-03 19:18:02,831 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:18:02,832 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:18:05,551 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:18:09,033 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:18:11,694 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:18:16,753 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:18:20,345 : fml.py         : INFO     : TASK START: Task (Order ID=1, Task ID=3): 4 bins -> C13
+2018-04-03 19:18:28,708 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:18:30,332 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:18:32,584 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:18:35,963 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:18:37,822 : fml.py         : INFO     : TASK START: Task (Order ID=1, Task ID=1): 4 bins -> C11
+2018-04-03 19:18:44,305 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:18:45,486 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:18:48,296 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:18:52,692 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:18:58,208 : fml.py         : INFO     : TASK START: Task (Order ID=1, Task ID=2): 5 bins -> C12
+2018-04-03 19:19:09,857 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:19:11,839 : fml.py         : DEBUG    : Subject pressed B22.
+2018-04-03 19:19:15,369 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:19:16,154 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:19:18,629 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:19:20,603 : fml.py         : INFO     : TASK START: Task (Order ID=1, Task ID=3): 5 bins -> C13
+2018-04-03 19:19:26,316 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:19:28,285 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:19:32,488 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:19:34,761 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:19:36,483 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:19:38,719 : fml.py         : INFO     : TASK START: Task (Order ID=5, Task ID=1): 4 bins -> C11
+2018-04-03 19:19:45,678 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:19:48,896 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:19:50,510 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:19:52,661 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:19:54,708 : fml.py         : INFO     : TASK START: Task (Order ID=5, Task ID=2): 4 bins -> C12
+2018-04-03 19:19:55,999 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:19:55,999 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:19:58,243 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:19:59,264 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:20:02,081 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:20:07,713 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:20:10,068 : fml.py         : INFO     : TASK START: Task (Order ID=5, Task ID=3): 4 bins -> C13
+2018-04-03 19:20:15,785 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:20:15,785 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:20:15,785 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:20:15,786 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:20:15,786 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:20:15,786 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:20:15,787 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:20:15,787 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:20:18,874 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:20:21,280 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:20:22,971 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:20:24,711 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:20:28,051 : fml.py         : INFO     : TASK START: Task (Order ID=5, Task ID=1): 4 bins -> C11
+2018-04-03 19:20:29,633 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:20:29,633 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:20:33,418 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:20:34,443 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:20:36,999 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:20:38,740 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:20:42,017 : fml.py         : INFO     : TASK START: Task (Order ID=5, Task ID=2): 5 bins -> C12
+2018-04-03 19:20:46,492 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:20:47,546 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:20:48,664 : fml.py         : DEBUG    : Subject pressed B22.
+2018-04-03 19:20:49,698 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:20:54,306 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:20:55,374 : fml.py         : INFO     : TASK START: Task (Order ID=5, Task ID=3): 4 bins -> C13
+2018-04-03 19:20:59,424 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:21:02,341 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:21:04,334 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:21:08,294 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:21:13,949 : fml.py         : INFO     : TASK START: Task (Order ID=4, Task ID=1): 3 bins -> C11
+2018-04-03 19:21:27,072 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:21:29,632 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:21:32,909 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:21:37,107 : fml.py         : INFO     : TASK START: Task (Order ID=4, Task ID=2): 4 bins -> C12
+2018-04-03 19:21:40,898 : fml.py         : DEBUG    : Subject pressed A12.
+2018-04-03 19:21:42,228 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:21:44,992 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:21:46,772 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:21:52,365 : fml.py         : INFO     : TASK START: Task (Order ID=4, Task ID=3): 4 bins -> C13
+2018-04-03 19:21:53,806 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:21:53,807 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:21:58,969 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:22:05,164 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:22:06,086 : fml.py         : DEBUG    : Subject pressed A21.
+2018-04-03 19:22:11,412 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:22:14,460 : fml.py         : INFO     : TASK START: Task (Order ID=4, Task ID=1): 4 bins -> C11
+2018-04-03 19:22:17,862 : fml.py         : DEBUG    : Subject pressed B22.
+2018-04-03 19:22:19,885 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:22:29,331 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:22:31,788 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:22:38,263 : fml.py         : INFO     : TASK START: Task (Order ID=4, Task ID=2): 6 bins -> C12
+2018-04-03 19:22:43,156 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:22:44,953 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:22:47,967 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:22:54,370 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:22:57,230 : fml.py         : DEBUG    : Subject pressed B22.
+2018-04-03 19:23:00,461 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:23:03,227 : fml.py         : INFO     : TASK START: Task (Order ID=4, Task ID=3): 4 bins -> C13
+2018-04-03 19:23:08,636 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:23:12,441 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:23:15,513 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:23:17,645 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:23:20,640 : fml.py         : INFO     : TASK START: Task (Order ID=9, Task ID=1): 4 bins -> C11
+2018-04-03 19:23:22,379 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:23:22,379 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:23:26,484 : fml.py         : DEBUG    : Subject pressed A11.
+2018-04-03 19:23:27,963 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:23:33,420 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:23:36,096 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:23:42,308 : fml.py         : INFO     : TASK START: Task (Order ID=9, Task ID=2): 5 bins -> C12
+2018-04-03 19:23:56,474 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:23:58,283 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:23:58,373 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:24:00,773 : fml.py         : DEBUG    : Subject pressed A21.
+2018-04-03 19:24:03,371 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:24:05,483 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:24:09,068 : fml.py         : INFO     : TASK START: Task (Order ID=9, Task ID=3): 4 bins -> C13
+2018-04-03 19:24:10,367 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:24:10,367 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:24:10,368 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:24:10,368 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:24:12,959 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:24:14,346 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:24:16,589 : fml.py         : DEBUG    : Subject pressed A32.
+2018-04-03 19:24:18,796 : fml.py         : DEBUG    : Subject pressed A41.
+2018-04-03 19:24:24,235 : fml.py         : INFO     : TASK START: Task (Order ID=9, Task ID=1): 4 bins -> C11
+2018-04-03 19:24:25,935 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:24:25,936 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:24:34,872 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:24:37,944 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:24:43,886 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:24:44,654 : fml.py         : DEBUG    : Subject pressed B31.
+2018-04-03 19:24:47,281 : fml.py         : INFO     : TASK START: Task (Order ID=9, Task ID=2): 3 bins -> C12
+2018-04-03 19:25:42,967 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:25:44,606 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:25:46,433 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:25:48,171 : fml.py         : INFO     : TASK START: Task (Order ID=9, Task ID=3): 5 bins -> C13
+2018-04-03 19:25:49,745 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:25:49,745 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:25:52,180 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:25:53,207 : fml.py         : DEBUG    : Subject pressed B42.
+2018-04-03 19:25:54,641 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:25:55,974 : fml.py         : DEBUG    : Subject pressed B22.
+2018-04-03 19:25:57,303 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:26:00,024 : fml.py         : INFO     : TASK START: Task (Order ID=6, Task ID=1): 4 bins -> C11
+2018-04-03 19:26:01,990 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:26:01,991 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:26:05,994 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:26:07,953 : fml.py         : DEBUG    : Subject pressed A31.
+2018-04-03 19:26:10,236 : fml.py         : DEBUG    : Subject pressed A43.
+2018-04-03 19:26:12,152 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:26:15,737 : fml.py         : INFO     : TASK START: Task (Order ID=6, Task ID=2): 3 bins -> C12
+2018-04-03 19:26:17,913 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:26:17,913 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:26:20,446 : fml.py         : DEBUG    : Subject pressed A33.
+2018-04-03 19:26:21,777 : fml.py         : DEBUG    : Subject pressed A23.
+2018-04-03 19:26:23,825 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:26:30,165 : fml.py         : INFO     : TASK START: Task (Order ID=6, Task ID=3): 4 bins -> C13
+2018-04-03 19:26:33,962 : fml.py         : DEBUG    : Subject pressed A22.
+2018-04-03 19:26:34,986 : fml.py         : DEBUG    : Subject pressed A21.
+2018-04-03 19:26:35,715 : fml.py         : DEBUG    : Subject pressed A13.
+2018-04-03 19:26:37,614 : fml.py         : DEBUG    : Subject pressed A42.
+2018-04-03 19:26:39,930 : fml.py         : INFO     : TASK START: Task (Order ID=6, Task ID=1): 5 bins -> C11
+2018-04-03 19:26:44,125 : fml.py         : DEBUG    : Subject pressed C11.
+2018-04-03 19:26:44,126 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:26:45,533 : fml.py         : DEBUG    : Subject pressed B13.
+2018-04-03 19:26:47,172 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:26:48,503 : fml.py         : DEBUG    : Subject pressed B43.
+2018-04-03 19:26:50,654 : fml.py         : DEBUG    : Subject pressed B41.
+2018-04-03 19:26:52,088 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:26:56,764 : fml.py         : INFO     : TASK START: Task (Order ID=6, Task ID=2): 4 bins -> C12
+2018-04-03 19:26:58,804 : fml.py         : DEBUG    : Subject pressed C12.
+2018-04-03 19:26:58,805 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:27:01,950 : fml.py         : DEBUG    : Subject pressed B12.
+2018-04-03 19:27:09,241 : fml.py         : DEBUG    : Subject pressed B33.
+2018-04-03 19:27:11,917 : fml.py         : DEBUG    : Subject pressed B32.
+2018-04-03 19:27:12,454 : fml.py         : DEBUG    : Subject pressed B43.
+2018-04-03 19:27:17,578 : fml.py         : INFO     : TASK START: Task (Order ID=6, Task ID=3): 4 bins -> C13
+2018-04-03 19:27:20,537 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:27:20,537 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:27:20,538 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:27:20,538 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:27:20,538 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:27:20,539 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:27:20,557 : fml.py         : DEBUG    : Subject pressed C13.
+2018-04-03 19:27:20,557 : fml.py         : WARNING  : Unexpected state!
+2018-04-03 19:27:22,015 : fml.py         : DEBUG    : Subject pressed B23.
+2018-04-03 19:27:25,878 : fml.py         : DEBUG    : Subject pressed B21.
+2018-04-03 19:27:26,514 : fml.py         : DEBUG    : Subject pressed B11.
+2018-04-03 19:27:28,060 : fml.py         : DEBUG    : Subject pressed B43.
+
+Experiment Complete.
