@@ -111,8 +111,6 @@ def initDisplays(pickpath):
     """
     for display, quantity in pickpath.items():
         ChangeDisplay(sockhub, display, NumberConvert(quantity), False)
-        sleep(0.15)
-
 
 def runTask(pickpaths):
     """Function that runs a full task with a set of carts and a list of pickpaths.
@@ -121,13 +119,14 @@ def runTask(pickpaths):
         cartSet (list): list of carts in a task, ordered
     """
     for pickorder in pickpaths:  # type: PickingTask
-        logger.info("TASK START: %s" % pickorder)
 
         initReceive(pickorder.receive_bin.tag)
         orderInProgress = False
 
         while not orderInProgress:
             if press() == pickorder.receive_bin.tag:
+                logger.info("TASK START: %s" % pickorder)
+
                 runPickPath(pickorder)
                 reset()
                 orderInProgress = True
@@ -168,6 +167,7 @@ def runPickPath(pickpath):  # type: (PickingTask) -> None
                     subtaskInProgress = False
 
             pickpathInProgress = False
+            logger.info("TASK END: %s" % pickpath)
 
         # Else if the subject pressed a source bin
         elif display in displaySet:
@@ -181,7 +181,6 @@ def runPickPath(pickpath):  # type: (PickingTask) -> None
         else:
             logger.warning("Unexpected state!")
 
-
 def main():
     reset()
     pickpaths = utils.get_pick_paths_from_user_choice()
@@ -190,9 +189,13 @@ def main():
 if __name__ == "__main__":
     try:
         main()
+    except KeyboardInterrupt as ki:
+        print("Handling keyboard interrupt. Resetting displays")
+        reset()
     except Exception as exception:
         print("Experiment Failed.")
         print(exception)
-        raise
     finally:
         print("\nExperiment Complete.")
+        sockhub.close()
+
