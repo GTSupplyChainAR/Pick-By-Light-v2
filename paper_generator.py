@@ -1,112 +1,111 @@
-"""Unfinished script
-"""
+import os
+from fpdf import FPDF
+import constants
 import json
-import copy
+import sys
 
-pickpath = {}
-taskIndex, orderIndex = 0,0
 
-carts = ["C11", "C12", "C13"]
-racks = ["A", "B"]
+VERSION = '1.2'
 
-def changePickPathOrder(pick_paths):
-    """From originally parsed pickpaths from json file, change order to put all orders together
-    based on what rack they're from. Return an ordered list.
-    """
-    ordered_pick_paths = []
-    for rack in racks:
-        for pp in pick_paths:
-            if rack in pp.keys():
-                ordered_pick_paths.append(pp[rack])
 
-    return ordered_pick_paths
+class PickListPDF(FPDF):
+    def __init__(self, study_method, task_order_number, is_training_task, task_id, *args, **kwargs):
+        super(PickListPDF, self).__init__(*args, **kwargs)
+        self.study_method = study_method
+        self.task_order_number = task_order_number
+        self.is_training_task = is_training_task
+        self.task_id = task_id
 
-def jsonInputHandler(filename):
-    """Take json file containing tasks which contain orders and return dictionaries
-    {
-        "tasks": [
-            {
-                "orders": [
-                    {
-                        "A32": 1,
-                        "B31": 2,
-                        "target": "C11"
-                    },
-                    {
-                        "A41": 3,
-                        "target": "C12"
-                    }
-                ]
-            }
-        ]
-    }
+    def header(self):
+        self.set_font('Times', 'B', 15)  # Times New Roman, Bold, 15
 
-    Keyword arguments:
-    filename - name of json file
+        # Move to the right, and print title
+        self.cell(w=70)
+        title = study_method.replace('-', ' ').replace('_', ' - ').title()
+        self.cell(w=60, h=10, txt=title, align='C', border=1, ln=0, link='C')
 
-    Returns:
-    returnList - nested list of separate orders
-    """
-    fileh = open(filename)
-    data = json.load(fileh)
-    fileh.close()
-    tasks = data['tasks']
-    global taskIndex, orderIndex
-    tasksReturn = []
-    while taskIndex < len(tasks):  
-        orders = tasks[taskIndex]['orders']
-        taskId = tasks[taskIndex]['taskId']
-        
-        taskIndex += 1
-        orderIndex = 0
+        # Move down, to the right, and print version number
+        self.set_font('Times', 'B', 12)  # Times New Roman, Bold, 12
+        self.set_y(20)
+        self.cell(w=75)
+        self.cell(w=50, h=10, txt='Version %s' % VERSION, align='C')
 
-        pick_paths = []
-        while orderIndex < len(orders):
-            sourceBins = orders[orderIndex]['sourceBins']
+        # Line break
+        self.ln(20)
 
-            orderId = orders[orderIndex]['orderId']
-            receiveBin = orders[orderIndex]['receivingBinTag']
-            
-            orderIndex += 1
-            
-            rack_orders = {} 
-            for rack in racks: 
-                pickpath = {}
-                    
-                cartTotal = 0
-                for source_bin in sourceBins:
-                    if source_bin['binTag'][0] == rack:
-                        pickpath[source_bin['binTag']] = source_bin['numItems']
-                        cartTotal += source_bin['numItems']
+    # Page footer
+    def footer(self):
+        self.set_font('Times', '', 12)
 
-                if pickpath != {}:
-                    pickpath[receiveBin] = cartTotal
-                    cloned_pick_path = copy.deepcopy(pickpath)
-                    rack_orders[rack] = cloned_pick_path
+        self.set_xy(-60, -30)
+        self.cell(w=50, h=10, txt='Task #%d' % self.task_order_number)
+        self.set_xy(-60, -20)
+        self.cell(w=50, h=10, txt='Task ID %d - %s' % (self.task_id, 'Training' if self.is_training_task else 'Testing'))
 
-            cloned_racks = copy.deepcopy(rack_orders)
-            pick_paths.append(cloned_racks)
 
-        ordered_pick_paths = changePickPathOrder(pick_paths)
-        cloned_pick_paths = copy.deepcopy(ordered_pick_paths)
-        tasksReturn.append(cloned_pick_paths)
-    return tasksReturn
+if __name__ == '__main__':
 
-def main(args):
-    checkList = jsonInputHandler(args)
-    filename = "paper_pick_task_"
-    taskNum = 1
-    for task in checkList:
-        filename = filename + str(taskNum)
-        taskNum += 1
-        print(task)
+    # Read command line arguments
+    study_method = sys.argv[1]
+    task_type = sys.argv[2]
 
-if __name__ == "__main__":
-    import sys
-    try:
-        main(sys.argv[1])
-    except Exception as exception:
-        print("Experiment Failed.")
-        print(exception)
-    except:
-        print("\nExperiment Complete.")
+    # Create path where this JSON file exists and read the file
+    path = os.path.join('.', 'RFID-Study-Task-Generation', 'output', study_method, 'tasks-%s-%s.json' % (study_method, task_type))
+    with open(path, mode='r') as f:
+        data = json.load(f)
+
+    assert data['version'] == VERSION, "Version must match!"
+
+    for i, task in enumerate(data['tasks']):
+
+        # Setup PDF
+        pdf = PickListPDF(
+            study_method=study_method,
+            task_order_number=i + 1,
+            is_training_task='training' in path,
+            task_id=task['taskId'],
+        )
+        pdf.alias_nb_pages()
+        pdf.add_page()
+        pdf.set_font('Times', '', 12)
+
+        # Write information to PDF
+        for rack in constants.RACKS:
+            pdf.cell(w=0, h=10, txt=rack)
+            pdf.ln(h=5)
+
+            for order in task['orders']:
+                orderId = order['orderId']
+
+                pdf.cell(w=0, h=10, txt=' ' * 20 + '-' * 25, border=0, ln=0)
+                pdf.ln(h=5)
+
+                pdf.cell(w=0, h=10, txt=' ' * 20 + str(orderId))
+
+                for source_bin in order['sourceBins']:
+                    if source_bin['binTag'][0] != rack:
+                        continue
+
+                    txt = ' ' * 30 \
+                        + "%s x %d" % (source_bin['binTag'][1:], source_bin['numItems'])
+
+                    pdf.cell(w=0, h=10, txt=txt, border=0, ln=0)
+                    pdf.ln(h=5)
+
+                pdf.ln(h=5)
+
+        # Create output directories if needed
+        pdfs_dir = 'pdfs'
+        if not os.path.isdir(pdfs_dir):
+            os.mkdir(pdfs_dir)
+
+        output_dir = os.path.join(pdfs_dir, study_method)
+        if not os.path.isdir(output_dir):
+            os.mkdir(output_dir)
+
+        # Write to output file
+        output_filename = os.path.join(output_dir, '%s-%s-Task-Order-Number-%d.pdf' % (study_method, task_type, i + 1))
+        pdf.output(output_filename, dest='F')
+
+        # Uncomment below to open the file (only works on macOS)
+        # os.system('open %s' % output_filename)
