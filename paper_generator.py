@@ -9,22 +9,26 @@ VERSION = '1.2'
 
 
 class PickListPDF(FPDF):
-    def __init__(self, task_order_number, is_training_task, task_id, *args, **kwargs):
+    def __init__(self, study_method, task_order_number, is_training_task, task_id, *args, **kwargs):
         super(PickListPDF, self).__init__(*args, **kwargs)
-        self.task_order_number, self.is_training_task, self.task_id = task_order_number, is_training_task, task_id
+        self.study_method = study_method
+        self.task_order_number = task_order_number
+        self.is_training_task = is_training_task
+        self.task_id = task_id
 
     def header(self):
         self.set_font('Times', 'B', 15)  # Times New Roman, Bold, 15
 
         # Move to the right, and print title
-        self.cell(w=75)
-        self.cell(w=50, h=10, txt='Paper + Barcode', align='C', border=1, ln=0, link='C')
+        self.cell(w=70)
+        title = study_method.replace('-', ' ').replace('_', ' - ').title()
+        self.cell(w=60, h=10, txt=title, align='C', border=1, ln=0, link='C')
 
         # Move down, to the right, and print version number
         self.set_font('Times', 'B', 12)  # Times New Roman, Bold, 12
         self.set_y(20)
         self.cell(w=75)
-        self.cell(w=50, h=10, txt='Version 1', align='C')
+        self.cell(w=50, h=10, txt='Version %s' % VERSION, align='C')
 
         # Line break
         self.ln(20)
@@ -56,6 +60,7 @@ if __name__ == '__main__':
 
         # Setup PDF
         pdf = PickListPDF(
+            study_method=study_method,
             task_order_number=i + 1,
             is_training_task='training' in path,
             task_id=task['taskId'],
