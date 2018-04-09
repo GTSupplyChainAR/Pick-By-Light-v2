@@ -134,3 +134,51 @@ def parseExperimentDictionary(experimentData):
 
         taskIndex += 1
     return tasksReturn
+
+#
+# def get_paper_pick_list_tasks(data):
+#     """Function which parses dictionary with experiment data from json file.
+#
+#     Args:
+#         data (dict): dictionary of structured experiment data
+#     """
+#     tasks = data['tasks']
+#     tasksReturn = []
+#     for i, task in enumerate(tasks):
+#         orders = task['orders']
+#         taskId = task['taskId']
+#
+#         tasks_in_order = []
+#         for order in orders:
+#
+#             orderId = order['orderId']
+#             receiveBin = order['receivingBinTag']
+#
+#             for rack in RACKS:
+#                 source_bins = []
+#
+#                 cartTotal = 0
+#                 for source_bin in order['sourceBins']:
+#                     if source_bin['binTag'][0] == rack:
+#                         numItems = source_bin['numItems']
+#                         source_bins.append(SourceBin(
+#                             tag=source_bin['binTag'],
+#                             count=numItems
+#                         ))
+#                         cartTotal += numItems
+#
+#                 tasks_in_order.append(PaperPickListRackOrder(
+#                     rack_name=rack,
+#                     order_id=orderId,
+#                     source_bins=source_bins,
+#                     recieve_bin=ReceiveBin(receiveBin, cartTotal)
+#                 ))
+#
+#         PaperPickListRack(rack_name=rack, )
+#
+#
+#         tasks_ordered_by_rack = sorted(tasks_in_order, key=lambda rack_orders: rack_orders.rack)
+#
+#         tasksReturn.extend(tasks_ordered_by_rack)
+#
+#     return tasksReturn
