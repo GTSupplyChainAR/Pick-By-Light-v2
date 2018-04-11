@@ -31,15 +31,15 @@ class PickListPDF(FPDF):
         self.cell(w=50, h=10, txt='Version %s' % VERSION, align='C')
 
         # Line break
-        self.ln(20)
+        self.ln(5)
 
     # Page footer
     def footer(self):
-        self.set_font('Times', '', 12)
+        self.set_font('Times', '', 10)
 
-        self.set_xy(-60, -30)
-        self.cell(w=50, h=10, txt='Task #%d' % self.task_order_number)
         self.set_xy(-60, -20)
+        self.cell(w=50, h=10, txt='Task #%d' % self.task_order_number)
+        self.set_xy(-60, -15)
         self.cell(w=50, h=10, txt='Task ID %d - %s' % (self.task_id, 'Training' if self.is_training_task else 'Testing'))
 
 
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         )
         pdf.alias_nb_pages()
         pdf.add_page()
-        pdf.set_font('Times', '', 12)
+        pdf.set_font('Times', '', 11)
 
         # Write information to PDF
         for rack in constants.RACKS:
