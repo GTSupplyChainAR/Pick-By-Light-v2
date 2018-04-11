@@ -71,16 +71,26 @@ if __name__ == '__main__':
 
         # Write information to PDF
         for rack in constants.RACKS:
-            pdf.cell(w=0, h=10, txt=rack)
+            txt = rack
+            print(txt)
+
+            pdf.cell(w=0, h=10, txt=txt, border=0, ln=0)
             pdf.ln(h=5)
 
             for order in task['orders']:
                 orderId = order['orderId']
 
-                pdf.cell(w=0, h=10, txt=' ' * 20 + '-' * 25, border=0, ln=0)
+                txt = ' ' * 20 + '-' * 25
+                print(txt)
+
+                pdf.cell(w=0, h=10, txt=txt, border=0, ln=0)
                 pdf.ln(h=5)
 
-                pdf.cell(w=0, h=10, txt=' ' * 20 + str(orderId))
+                txt = ' ' * 20 + str(orderId)
+                print(txt)
+
+                pdf.cell(w=0, h=10, txt=txt, border=0, ln=0)
+                pdf.ln(h=5)
 
                 for source_bin in order['sourceBins']:
                     if source_bin['binTag'][0] != rack:
@@ -88,6 +98,8 @@ if __name__ == '__main__':
 
                     txt = ' ' * 30 \
                         + "%s x %d" % (source_bin['binTag'][1:], source_bin['numItems'])
+
+                    print(txt)
 
                     pdf.cell(w=0, h=10, txt=txt, border=0, ln=0)
                     pdf.ln(h=5)
