@@ -19,6 +19,8 @@ from socket import *
 import logging
 from models import PickingTask
 import utils
+from constants import EMPTY_LIGHT_LAYOUT, ALL_DISPLAYS
+from visualize import BLANK_DISPLAY
 
 # Setup logging
 logger = logging.getLogger(os.path.basename(__file__))
@@ -39,8 +41,6 @@ PICK_BY_LIGHT_RACK_ADDRESS = ('192.168.2.255', 3865)
 
 RECEIVE_BIN_INITIAL_LIGHT_LAYOUT = 47375
 
-EMPTY_LIGHT_LAYOUT = 0
-
 BOTH_DECIMAL_POINTS_LIGHT_LAYOUT = 32896
 
 sockhub = socket(AF_INET, SOCK_DGRAM)
@@ -48,23 +48,42 @@ sockhub.bind(('', 3865))
 sockhub.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
 
 
-def ChangeDisplay(sockcntrl, display, number):
+def ChangeDisplay(display=None, all_displays=False, number=None, layout=None):
     """Function that changes a particular display to show a number.
 
     Args:
-        sockcntrl (obj): socket connection
+        sockhub (obj): socket connection
         display (str): id of display
         number (int): number to show on display
+        layout (int): a layout to display without running number conversion
     """
+
+    assert (number is not None or layout is not None) and not (number is not None and layout is not None)
+
+    if all_displays:
+        display = ALL_DISPLAYS
+
+    global visualizer
+    if layout is not None:
+        viz_value = layout
+    else:
+        viz_value = number
+    visualizer.change_display(display, viz_value)
+
+    if layout is not None:
+        rack_value = layout
+    else:
+        rack_value = NumberConvert(number)
+
     message1 = 'xpl-cmnd\n{\nhop=1\nsource=bnz-sender.orderpick\ntarget=smgpoe-lamp.'
     message2 = '\n}\ncontrol.basic\n{\ndevice=display\ntype=variable\ncurrent='
     message3 = '\n}\n'
-    message = message1 + display + message2 + str(number) + message3
+    message = message1 + display + message2 + str(rack_value) + message3
     message = message.encode('utf-8')
-    response = sockcntrl.sendto(message, PICK_BY_LIGHT_RACK_ADDRESS)
+    response = sockhub.sendto(message, PICK_BY_LIGHT_RACK_ADDRESS)
 
     # HACK: Get rid of this delay! It's confusing!
-    time.sleep(0.05)
+    # time.sleep(0.05)
 
     return response
 
@@ -89,16 +108,7 @@ def NumberConvert(number):
 def reset():
     """Function that resets all displays.
     """
-    ChangeDisplay(sockhub, '*', EMPTY_LIGHT_LAYOUT)
-
-
-def initReceive(receiveDisplay):
-    """Function which starts the order on the receive bin.
-
-    Args:
-        receiveDisplay (str): id of display corresponding to receive bin
-    """
-    ChangeDisplay(sockhub, receiveDisplay, RECEIVE_BIN_INITIAL_LIGHT_LAYOUT)
+    ChangeDisplay(all_displays=True, layout=EMPTY_LIGHT_LAYOUT)
 
 
 def press():
@@ -124,7 +134,7 @@ def initDisplays(pickpath):
     """
     for display, quantity in pickpath.items():
         logger.debug('Setting display %s = %d' % (display, quantity))
-        ChangeDisplay(sockhub, display, NumberConvert(quantity))
+        ChangeDisplay(display=display, number=quantity)
 
 
 def run_all_pick_tasks(pick_tasks):
@@ -138,7 +148,7 @@ def run_all_pick_tasks(pick_tasks):
 
         # Show start symbol to subject on first task
         if i == 0:
-            initReceive(pick_task.receive_bin.tag)
+            ChangeDisplay(display=pick_task.receive_bin.tag, layout=RECEIVE_BIN_INITIAL_LIGHT_LAYOUT)
 
             # Get user's confirmation to start first task (must press first receive bin to start)
             first_task_started = False
@@ -153,6 +163,8 @@ def run_all_pick_tasks(pick_tasks):
         logger.info("TASK END: %s" % pick_task)
 
         reset()
+
+        time.sleep(0.1)
 
 
 def runPickPath(pickpath):  # type: (PickingTask) -> None
@@ -184,7 +196,7 @@ def runPickPath(pickpath):  # type: (PickingTask) -> None
         # Else if the subject pressed a source bin
         if pressed_bin_tag in remaining_source_bin_tags_and_counts:
             # Set the pressed source bin value to 0
-            ChangeDisplay(sockhub, pressed_bin_tag, NumberConvert(0))
+            ChangeDisplay(display=pressed_bin_tag, number=0)
 
             # Subject has pressed the source bin and doesn't have to do so again.
             # Remove this bin from the expected/remaining ones.
@@ -198,14 +210,14 @@ def runPickPath(pickpath):  # type: (PickingTask) -> None
                          (pressed_bin_tag, pressed_source_bin_count, new_receive_bin_total))
 
             # Update the total on the receive bin
-            ChangeDisplay(sockhub, receive_bin_tag, NumberConvert(new_receive_bin_total))
+            ChangeDisplay(display=receive_bin_tag, number=new_receive_bin_total)
 
         # If the subject pressed all of the required source bins' buttons the task is now over
         elif not remaining_source_bin_tags_and_counts and pressed_bin_tag == receive_bin_tag:
             # Set the receive bin tags to empty (pick path is done)
             for tag in correctly_pressed_source_bins + [receive_bin_tag]:
                 logger.debug("Clearing display %s" % tag)
-                ChangeDisplay(sockhub, tag, EMPTY_LIGHT_LAYOUT)
+                ChangeDisplay(display=tag, layout=EMPTY_LIGHT_LAYOUT)
 
             pickpath_completed = True
 
@@ -221,13 +233,19 @@ def main():
 
 if __name__ == "__main__":
     try:
-        main()
+        from visualize import LightRackVisualizer
+
+        global visualizer
+        visualizer = LightRackVisualizer()
+
+        visualizer.run(main)
+
     except KeyboardInterrupt as ki:
         print("Handling keyboard interrupt. Resetting displays")
-        reset()
     except Exception as exception:
         print("Experiment Failed.")
         print(exception)
     finally:
         print("\nExperiment Complete.")
+        reset()
         sockhub.close()
