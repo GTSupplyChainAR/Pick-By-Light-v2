@@ -33,4 +33,5 @@ class PickingTask(object):
         return display_dict
 
     def __str__(self):
-        return "Task (Order ID=%d, Task ID=%d): %d bins -> %s" % (self.task_id, self.order_id, len(self.source_bins), self.receive_bin.tag)
+        return "Task ID=%d, Order ID=%d, %d bins (%s), Receive bin %s" % \
+               (self.task_id, self.order_id, len(self.source_bins), str(' '.join(bin.tag for bin in self.source_bins)), self.receive_bin.tag)

@@ -1,1 +1,5 @@
 RACKS = ["A", "B"]
+
+EMPTY_LIGHT_LAYOUT = 0
+
+ALL_DISPLAYS = '*'
