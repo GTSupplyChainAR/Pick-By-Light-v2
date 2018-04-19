@@ -228,6 +228,10 @@ def runPickPath(pickpath):  # type: (PickingTask) -> None
 def main():
     reset()
     pickpaths = utils.get_pick_paths_from_user_choice()
+
+    log_filename = input("What file do you want to write to? ")
+    utils.configure_file_logger(logger, log_filename)
+
     run_all_pick_tasks(pickpaths)
 
 

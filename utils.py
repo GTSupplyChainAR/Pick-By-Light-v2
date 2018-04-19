@@ -54,14 +54,22 @@ def choose_pick_path_file():
     return file_path_selected
 
 
+loggerFormatter = logging.Formatter('%(asctime)-20s : %(name)-14s : %(levelname)-8s : %(message)s')
+
 def configure_logger(logger, level=logging.DEBUG):
     """ Configures the given logger to print messages at the given level. """
     logger.setLevel(level)
     loggerHandler = logging.StreamHandler()
-    loggerFormatter = logging.Formatter('%(asctime)-20s : %(name)-14s : %(levelname)-8s : %(message)s')
-    loggerHandler.setFormatter(loggerFormatter)
     loggerHandler.setLevel(level)
+    loggerHandler.setFormatter(loggerFormatter)
     logger.addHandler(loggerHandler)
+    return logger
+
+def configure_file_logger(logger, log_filename, level=logging.DEBUG):
+    fileHandler = logging.FileHandler(log_filename)
+    fileHandler.setFormatter(loggerFormatter)
+    fileHandler.setLevel(level)
+    logger.addHandler(fileHandler)
     return logger
 
 
